@@ -1,0 +1,7 @@
+[user]
+  name = Theo
+  email = theo.danneels@telecom-paristech.fr
+[push]
+  default = simple
+[core]
+  editor = nvim
