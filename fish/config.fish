@@ -50,8 +50,8 @@ set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 # set -gx FZF_TMUX 1
 
-# Default editor is vim
-set -gx EDITOR vim
+# Default editor is nvim
+set -gx EDITOR nvim
 
 # Colored man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
