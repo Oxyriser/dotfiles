@@ -75,3 +75,6 @@ set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
 set -gx BAT_THEME "Dracula"
+
+# Brew
+set -gx HOMEBREW_INSTALL_BADGE "✅" 

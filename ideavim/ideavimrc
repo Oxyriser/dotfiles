@@ -1,0 +1,31 @@
+"Remap leader
+let mapleader=" "
+
+"Search
+"Search as you type
+"Highlight results
+"Ignore case
+"Use qq to remove the highlight
+set incsearch
+set hlsearch
+set ignorecase
+nnoremap qq :nohl<CR>
+
+"Add a new line below in normal mode
+nnoremap <CR> O<Esc>j
+
+"Remap escape
+"jj is always near
+inoremap jj <Esc>
+
+"Remap page moves
+"Avoid scrolling one line by one line
+noremap <C-J> }
+noremap <C-K> {
+
+"But still insert tab
+inoremap hh <C-V><Tab>
+
+"Show matching chars
+"Like () or {}
+set showmatch
