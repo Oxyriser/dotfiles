@@ -62,6 +62,12 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
+"Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 "Colors
 set termguicolors
 colorscheme dracula
@@ -160,7 +166,7 @@ set showmatch
 
 "More than 80 chars is bad
 "Show a ruller on toggle
-nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
+"nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Signcolumns
 "Avoid any unwanted background
