@@ -1,7 +1,9 @@
 [user]
-  name = Theo
+  name = Theo Danneels
   email = theo.danneels@telecom-paristech.fr
 [push]
-  default = simple
+  default = current
 [core]
   editor = nvim
+[web]
+  browser = google-chrome
