@@ -12,6 +12,7 @@ alias g "git"
 alias gd "git diff"
 alias gu "git pull"
 alias gst "git status"
+alias gck "git checkout"
 alias ga "git add"
 alias gaa "git add --all"
 alias gc "git commit"
@@ -20,8 +21,8 @@ alias gp "git push"
 alias gt "git log --oneline --decorate --all --graph"
 
 ## DU
-alias du "du -sh"
-alias ddu "du -h"
+alias du "du -h"
+alias ddu "du -sh"
 
 ## RM
 alias rrm "rm -Rf"
