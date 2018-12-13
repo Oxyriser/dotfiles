@@ -10,13 +10,7 @@ set fish_greeting
 # Disable valid path underline
 set fish_color_valid_path
 
-# Vi mode
-# With cursor shape disabled
-# Mode is handled by prompt
-function fish_vi_cursor; end
-  fish_vi_key_bindings
-
-# Bindings !
+# Bindings
 function fish_user_key_bindings
   # Still enable ctrl+f in Vim mode
   for mode in insert default visual
@@ -54,13 +48,13 @@ set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 set -gx EDITOR nvim
 
 # Colored man
-set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
-set -gx LESS_TERMCAP_md (printf "\033[01;31m")
-set -gx LESS_TERMCAP_me (printf "\033[0m")
-set -gx LESS_TERMCAP_se (printf "\033[0m")
-set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
-set -gx LESS_TERMCAP_ue (printf "\033[0m")
-set -gx LESS_TERMCAP_us (printf "\033[01;32m")
+# set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
+# set -gx LESS_TERMCAP_md (printf "\033[01;31m")
+# set -gx LESS_TERMCAP_me (printf "\033[0m")
+# set -gx LESS_TERMCAP_se (printf "\033[0m")
+# set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
+# set -gx LESS_TERMCAP_ue (printf "\033[0m")
+# set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
@@ -78,3 +72,6 @@ set -gx BAT_THEME "Dracula"
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
+
+# Java
+set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home"
