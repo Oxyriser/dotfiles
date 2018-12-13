@@ -10,15 +10,20 @@ set fish_greeting
 # Disable valid path underline
 set fish_color_valid_path
 
+# Disable vi cursor mode
+function fish_vi_cursor; end
+
 # Bindings
 function fish_user_key_bindings
+  fish_vi_key_bindings
+
   # Still enable ctrl+f in Vim mode
   for mode in insert default visual
     bind -M $mode \cf forward-char
   end
 
   # Get the default FZF functions and bindings
-  #fzf_key_bindings
+  fzf_key_bindings
 
   # Set the custom bindings
   bind -e \cr
@@ -42,22 +47,18 @@ end
 # FZF configuration
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
-# set -gx FZF_TMUX 1
 
 # Default editor is nvim
 set -gx EDITOR nvim
 
-# Colored man
-# set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
-# set -gx LESS_TERMCAP_md (printf "\033[01;31m")
-# set -gx LESS_TERMCAP_me (printf "\033[0m")
-# set -gx LESS_TERMCAP_se (printf "\033[0m")
-# set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
-# set -gx LESS_TERMCAP_ue (printf "\033[0m")
-# set -gx LESS_TERMCAP_us (printf "\033[01;32m")
-
-# Go main workspace
-set -gx GOPATH $HOME/Documents/go
+# Dracula themed man
+set -gx LESS_TERMCAP_mb (set_color -o -u FF5555)
+set -gx LESS_TERMCAP_md (set_color -o BD93F9)
+set -gx LESS_TERMCAP_me (set_color normal)
+set -gx LESS_TERMCAP_so (set_color -b 44475A)
+set -gx LESS_TERMCAP_se (set_color normal)
+set -gx LESS_TERMCAP_us (set_color -o 50FA7B)
+set -gx LESS_TERMCAP_ue (set_color normal)
 
 # Personal infos
 # Used in vim snippets
