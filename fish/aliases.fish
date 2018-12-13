@@ -38,9 +38,13 @@ alias mv "mv -v"
 alias python "python3"
 alias py "python3"
 alias ipy "ipython3"
+alias pip "pip3"
 
 ## CHMOD
 alias cx "chmod +x"
 
 ## BAT
 alias cat "bat --style=numbers,changes"
+
+## CD
+alias ... "cd ../.."
