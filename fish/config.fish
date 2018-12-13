@@ -15,12 +15,8 @@ function fish_vi_cursor; end
 
 # Bindings
 function fish_user_key_bindings
+  # Get the vi key bindings
   fish_vi_key_bindings
-
-  # Still enable ctrl+f in Vim mode
-  for mode in insert default visual
-    bind -M $mode \cf forward-char
-  end
 
   # Get the default FZF functions and bindings
   fzf_key_bindings
@@ -43,6 +39,7 @@ function fish_user_key_bindings
     bind -M insert \ck fzf-cd-widget
   end
 end
+
 
 # FZF configuration
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
