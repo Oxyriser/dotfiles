@@ -1,25 +1,18 @@
 # Dracula fzf colors
 
-set -l color00 '#282936'
-set -l color01 '#3a3c4e'
-set -l color02 '#4d4f68'
-set -l color03 '#626483'
-set -l color04 '#62d6e8'
-set -l color05 '#e9e9f4'
-set -l color06 '#f1f2f8'
-set -l color07 '#f7f7fb'
-set -l color08 '#ea51b2'
-set -l color09 '#b45bcf'
-set -l color0A '#00f769'
-set -l color0B '#ebff87'
-set -l color0C '#a1efe4'
-set -l color0D '#62d6e8'
-set -l color0E '#b45bcf'
-set -l color0F '#00f769'
+set -l colorbg '#282a36'
+set -l colorfg '#f8f8f2'
+set -l comment '#6272a4'
+set -l green '#50fa7b'
+set -l cyan '#8be9fd'
+set -l purple '#bd93f9'
+set -l pink '#ff79c6'
+set -l red '#ff5555'
+set -l orange '#ffb86c'
+set -l yellow '#f1fa8c'
 
-set -U FZF_DEFAULT_OPTS "\
-  --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D \
-  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C \
-  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D \
-  --no-height --no-reverse \
+set -x FZF_DEFAULT_OPTS "
+  --color=bg+:$colorbg,bg:$colorbg,spinner:$purple,hl:$purple
+  --color=fg:$colorfg,header:$colorfg,info:$yellow,pointer:$purple
+  --color=marker:$purple,fg+:$purple,prompt:$yellow,hl+:$green
   "

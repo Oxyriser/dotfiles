@@ -1,3 +1,6 @@
+# Set fzf theme to dracula
+source $HOME/.dotfiles/fzf/dracula.fish
+
 # Get the aliases
 source $HOME/.dotfiles/fish/aliases.fish
 
