@@ -1,11 +1,14 @@
-# Set fzf theme to dracula
-source $HOME/.dotfiles/fzf/dracula.fish
+# Set global variables for dracula theme
+source $HOME/.dotfiles/fish/dracula.fish
 
 # Get the aliases
 source $HOME/.dotfiles/fish/aliases.fish
 
 # Get the functions
 source $HOME/.dotfiles/fish/functions.fish
+
+# Set fzf theme to dracula
+source $HOME/.dotfiles/fzf/fzf.fish
 
 # Disable greeting
 set fish_greeting
@@ -43,12 +46,12 @@ set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 set -gx EDITOR nvim
 
 # Dracula themed man
-set -gx LESS_TERMCAP_mb (set_color -o -u FF5555)
-set -gx LESS_TERMCAP_md (set_color -o BD93F9)
+set -gx LESS_TERMCAP_mb (set_color -o -u $red)
+set -gx LESS_TERMCAP_md (set_color -o $purple)
 set -gx LESS_TERMCAP_me (set_color normal)
-set -gx LESS_TERMCAP_so (set_color -b 44475A)
+set -gx LESS_TERMCAP_so (set_color -b $selection)
 set -gx LESS_TERMCAP_se (set_color normal)
-set -gx LESS_TERMCAP_us (set_color -o 50FA7B)
+set -gx LESS_TERMCAP_us (set_color -o $green)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
 # Locales
