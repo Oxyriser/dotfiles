@@ -51,12 +51,7 @@ set -gx LESS_TERMCAP_se (set_color normal)
 set -gx LESS_TERMCAP_us (set_color -o 50FA7B)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
-# Personal infos
-# Used in vim snippets
-set -gx FULLNAME "Theo Danneels"
-
 # Locales
-set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
