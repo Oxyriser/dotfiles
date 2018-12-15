@@ -16,6 +16,9 @@ set fish_greeting
 # Disable valid path underline
 set fish_color_valid_path
 
+# Set fish colors
+set -g fish_color_comment $comment
+
 # Disable vi cursor mode
 function fish_vi_cursor; end
 
