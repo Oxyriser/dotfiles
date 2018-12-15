@@ -37,11 +37,6 @@ function fish_user_key_bindings
 end
 
 
-# FZF configuration
-set -gx FZF_DEFAULT_COMMAND "fd . $HOME -E $HOME/Library"
-set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
-set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
-
 # Default editor is nvim
 set -gx EDITOR nvim
 
@@ -59,6 +54,9 @@ set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
 set -gx BAT_THEME "Dracula"
+
+# Grep
+set -gx GREP_COLOR '1;38;5;141'
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
