@@ -1,10 +1,62 @@
-let configpath = '/Users/theo/.dotfiles/cvim/cvimrc'
 set localconfig
-
+set scalehints
 set smoothscroll
+set sortlinkhints
+set nocompleteonopen
 set cncpcompletion
+set autoupdategist
+set noautofocus
+set dimhintcharacters
+set smartcase
+set autohidecursor
+set incsearch
+set linkanimations
+set hud
+set regex
+set noinsertmappings
+set defaultnewtabpage
 
+let searchlimit = 15
+let scrollstep = 60
+let timeoutlen = 600
+let typelinkhintsdelay = 0
+let scrollduration = 200
+let mapleader = " "
+let barposition = "top"
+let hintcharacters = "sdftyhjklmn"
+let blacklists = ["*://mail.google.com/*"]
+
+command b bookmarks
+
+map : openCommandBar
+map l nextTab
+map h previousTab
 map <C-j> scrollPageDown
 map <C-k> scrollPageUp
 map <C-h> previousTab
 map <C-l> nextTab
+map <C-q> quit
+
+map f createHint
+map F createActiveTabbedHint
+map i goToInput
+map u lastClosedTab
+map s :tabnew google<Space>
+map S :open google<Space>
+
+map <Leader>ex :tabopen chrome://extensions<CR>
+
+map <Leader>gh :tabopen https://github.com/Oxyriser<CR>
+map <Leader>Gh :open https://github.com/Oxyriser<CR>
+map <Leader>tw :tabopen http://twitter.com<CR>
+map <Leader>Tw :open http://twitter<CR>
+map <Leader>tp :tabopen https://synapses.telecom-paristech.fr/<CR>
+map <Leader>Tp :open https://synapses.telecom-paristech.fr/<CR>
+map <Leader>rd :tabopen https://www.reddit.com/<CR>
+map <Leader>Rd :open https://www.reddit.com/<CR>
+map <Leader>gm :tabopen https://mail.google.com/mail/#index<CR>
+map <Leader>Gm :open https://mail.google.com/mail/#index<CR>
+map <Leader>so :tabopen http://stackoverflow.com<CR>
+map <Leader>So :open http://stackoverflow.com<CR>
+map <Leader>fb :tabopen http://www.facebook.com<CR>
+map <Leader>Fb :open http://www.facebook.com<CR>
