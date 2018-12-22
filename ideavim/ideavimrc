@@ -1,31 +1,46 @@
+"Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 "Remap leader
 let mapleader=" "
 
 "Search
 "Search as you type
 "Highlight results
-"Ignore case
+"Smart case
 "Use qq to remove the highlight
 set incsearch
 set hlsearch
 set ignorecase
-nnoremap qq :nohl<CR>
-
-"Add a new line below in normal mode
-nnoremap <CR> O<Esc>j
+set smartcase
+nnoremap & :nohl<CR>
 
 "Remap escape
-"jj is always near
 inoremap jj <Esc>
+
+"Word for CamelCase words
+nnoremap <leader>w /\u<CR>:nohlsearch<CR>
+
+"Insert just one character
+:nnoremap <leader>i i<Space><Esc>r
+:nnoremap <leader>a a<Space><Esc>r
 
 "Remap page moves
 "Avoid scrolling one line by one line
 noremap <C-J> }
 noremap <C-K> {
 
-"But still insert tab
-inoremap hh <C-V><Tab>
+"Remap save and quit
+nnoremap qq :x<CR>
+
+"Highligh Search colors
+hi Search guibg=#44475a	guifg=NONE
+hi IncSearch guibg=NONE guifg=LightGrey
 
 "Show matching chars
 "Like () or {}
 set showmatch
+hi MatchParen guibg=NONE guifg=Yellow gui=bold

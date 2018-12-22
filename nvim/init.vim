@@ -2,24 +2,22 @@
 "Managed via vim-plug
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
-call plug#begin('~/.vim/plugged')
-" Some colorscheme
+call plug#begin('~/.local/share/nvim/plugged')
+
+"Colorscheme
 Plug 'dracula/vim'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "Status bar
 Plug 'vim-airline/vim-airline'
 
-"Automatic symbols completion
 "File explorer
 "Quick rename
-Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
 Plug 'danro/rename.vim'
 
 "FZF
 "Git support
-Plug '$HOME/.fzf'
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
@@ -39,9 +37,6 @@ Plug 'lervag/vimtex'
 "Python autocompletion
 Plug 'davidhalter/jedi-vim'
 
-"Python
-autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python' shellescape(@%, 1)<CR>
-
 "Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -56,8 +51,7 @@ let g:UltiSnipsSnippetDirectories = ["/users/theo/Documents/Java",
   \ "/users/theo/Documents/Python"
   \ ]
 
-"Vim asthetics
-Plug 'junegunn/limelight.vim'
+"Zen Mode
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
@@ -94,19 +88,13 @@ cabbrev b vsplit
 "Search
 "Search as you type
 "Highlight results
-"Ignore case
+"Smart case
 "Use qq to remove the highlight
 set incsearch
 set hlsearch
 set ignorecase
-nnoremap qq :nohl<CR>
-
-"Jump to error
-nnoremap <F9> :ALENext<CR>
-nnoremap  <F8> :ALEPrevious<CR>
-
-"Add a new line below in normal mode
-nnoremap <CR> O<Esc>j
+set smartcase
+nnoremap & :nohl<CR>
 
 "Avoid useless redraw
 set lazyredraw
@@ -114,9 +102,18 @@ set lazyredraw
 "Ignore some extensions in wildmenu
 set wildignore+=*.so,*.o,*.swp
 
+"Toggle zen mode
+nnoremap <leader>z :Goyo<CR>
+
 "Remap escape
-"jj is always near
 inoremap jj <Esc>
+
+"Word for CamelCase words
+nnoremap <leader>w /\u<CR>:nohlsearch<CR>
+
+"Insert just one character
+:nnoremap <leader>i i<Space><Esc>r
+:nnoremap <leader>a a<Space><Esc>r
 
 "Remap page moves
 "Avoid scrolling one line by one line
@@ -146,27 +143,17 @@ set list
 set expandtab
 set listchars=tab:..,trail:~
 
-"But still insert tab
-inoremap hh <C-V><Tab>
+"Remap save and quit
+nnoremap qq :x<CR>
 
-"Just in case I can not find
-"these on the keyboard
-inoremap ww <
-inoremap WW >
-
-"Remap write
-"nnoremap s :w<CR>
-
-"Remap quit
-nnoremap ee :q<CR>
+"Highligh Search colors
+hi Search guibg=#44475a	guifg=NONE
+hi IncSearch guibg=NONE guifg=LightGrey
 
 "Show matching chars
 "Like () or {}
 set showmatch
-
-"More than 80 chars is bad
-"Show a ruller on toggle
-"nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
+hi MatchParen guibg=NONE guifg=Yellow gui=bold
 
 "Signcolumns
 "Avoid any unwanted background
@@ -191,7 +178,7 @@ let g:ale_sign_error='→ '
 let g:ale_sign_warning='→ '
 
 "Ale signs color
-hi todo guibg=None guifg=Orange
+hi todo guibg=None guifg=Yellow
 
 "Linters to use
 "If nothing is precised, the default linters are used
@@ -213,7 +200,6 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 "Ignored rules are for 2 spaces indenting
 let g:python_recommended_style=0
 let g:ale_python_flake8_options='--ignore E111,E114'
-"E121,E128
 
 "Airline
 "Airline is the statusbar framework
@@ -296,8 +282,5 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\~$']
 
-"Enable project specific stuff
-"This is provided using a local .nvimrc
-"Secure avoid loading dangerous stuff
-set exrc
-set secure
+"Run python file
+autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python' shellescape(@%, 1)<CR>
