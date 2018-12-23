@@ -43,13 +43,6 @@ Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsSnippetsDir = ["/cpp.snippets",
-  \ "/python.snippets",
-  \ "/java.snippets"
-  \ ]
-let g:UltiSnipsSnippetDirectories = ["/users/theo/Documents/Java",
-  \ "/users/theo/Documents/Python"
-  \ ]
 
 "Zen Mode
 Plug 'junegunn/goyo.vim'
