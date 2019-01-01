@@ -37,6 +37,10 @@ Plug 'lervag/vimtex'
 "Python autocompletion
 Plug 'davidhalter/jedi-vim'
 
+"HTML auto-close tags
+Plug 'alvan/vim-closetag'
+let g:closetag_close_shortcut = '<leader>>'
+
 "Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
