@@ -40,6 +40,10 @@ function fish_user_key_bindings
 end
 
 
+# VirtualFish
+set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
+eval (python -m virtualfish)
+
 # Default editor is nvim
 set -gx EDITOR nvim
 
