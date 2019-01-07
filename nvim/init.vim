@@ -35,6 +35,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
 Plug 'lervag/vimtex'
+Plug 'plasticboy/vim-markdown'
 
 "Python autocompletion
 Plug 'davidhalter/jedi-vim'
@@ -177,9 +178,9 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 
 "Ale Python linting
 "Override python.vim defaults
-"Ignored rules are for 2 spaces indenting
+"Ignored rules are for 2 spaces indenting and spaces around arithmetic operators
 let g:python_recommended_style=0
-let g:ale_python_flake8_options='--ignore E111,E114'
+let g:ale_python_flake8_options='--ignore E111,E114,E226'
 
 "Airline
 "Airline is the statusbar framework
@@ -209,9 +210,9 @@ let g:airline#extensions#ale#warning_symbol='✝ '
 let g:airline#extensions#ale#show_line_numbers=0
 let g:airline#extensions#tagbar#enabled=0
 let g:airline_symbols.readonly='🔒'
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = ''
+let g:airline_symbols.linenr=''
+let g:airline_symbols.maxlinenr=''
+let g:airline_symbols.branch=''
 
 
 "FZF
