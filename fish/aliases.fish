@@ -47,9 +47,5 @@ alias cx "chmod +x"
 ## BAT
 alias cat "bat --style=numbers,changes"
 
-## GREP
-alias grep "grep --color=auto"
-alias egrep "grep -E"
-
 ## CD
 alias ... "cd ../.."

@@ -1,6 +1,3 @@
-# Set global variables for dracula theme
-source $HOME/.dotfiles/fish/dracula.fish
-
 # Get the aliases
 source $HOME/.dotfiles/fish/aliases.fish
 
@@ -15,9 +12,6 @@ set fish_greeting
 
 # Disable valid path underline
 set fish_color_valid_path
-
-# Set fish colors
-set -g fish_color_comment $comment
 
 # Disable vi cursor mode
 function fish_vi_cursor; end
@@ -48,22 +42,19 @@ eval (python -m virtualfish)
 set -gx EDITOR nvim
 
 # Dracula themed man
-set -gx LESS_TERMCAP_mb (set_color -o -u $red)
-set -gx LESS_TERMCAP_md (set_color -o $purple)
+set -gx LESS_TERMCAP_mb (set_color -o red)
+set -gx LESS_TERMCAP_md (set_color -o yellow)
 set -gx LESS_TERMCAP_me (set_color normal)
-set -gx LESS_TERMCAP_so (set_color -b $selection)
+set -gx LESS_TERMCAP_so (set_color -r)
 set -gx LESS_TERMCAP_se (set_color normal)
-set -gx LESS_TERMCAP_us (set_color -o $green)
+set -gx LESS_TERMCAP_us (set_color -o magenta)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
 # Locales
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "Dracula"
-
-# Grep
-set -gx GREP_COLOR '1;38;5;141'
+set -gx BAT_THEME "Gruvbox"
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 

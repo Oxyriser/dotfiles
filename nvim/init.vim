@@ -6,9 +6,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Colorscheme
 Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "File explorer
 "Quick rename
@@ -39,14 +41,10 @@ Plug 'davidhalter/jedi-vim'
 
 "HTML auto-close tags
 Plug 'alvan/vim-closetag'
-let g:closetag_close_shortcut = '<leader>>'
 
 "Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 "Zen Mode
 Plug 'junegunn/goyo.vim'
@@ -61,17 +59,10 @@ noremap <Right> <Nop>
 
 "Colors
 set termguicolors
-colorscheme dracula
-
-"Hide vertical split
-autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
+colorscheme gruvbox
 
 "Remap leader
 let mapleader=" "
-
-"Change shell (env variable)
-"At least for FZF
-let $SHELL = '/bin/bash'
 
 "Splits
 "Split on right and on below
@@ -143,19 +134,18 @@ set listchars=tab:..,trail:~
 "Remap save and quit
 nnoremap qq :x<CR>
 
-"Highligh Search colors
-hi Search guibg=#44475a	guifg=NONE
-hi IncSearch guibg=NONE guifg=LightGrey
-
 "Show matching chars
 "Like () or {}
 set showmatch
-hi MatchParen guibg=NONE guifg=Yellow gui=bold
 
 "Signcolumns
 "Avoid any unwanted background
 set signcolumn=yes
 hi clear SignColumn
+
+"And set right Ale colors
+high ALEErrorSign guibg=NONE guifg=red
+high ALEWarningSign guibg=NONE guifg=orange
 
 "Status line
 "Always show statusline
@@ -165,17 +155,10 @@ set laststatus=2
 set noshowmode
 set noshowcmd
 
-"Quickfix colors
-"Hide this ugly yellow
-hi QuickFixLine gui=None guibg=None guifg=None
-
 "Ale signs
 let g:ale_set_highlights=0
 let g:ale_sign_error='→ '
 let g:ale_sign_warning='→ '
-
-"Ale signs color
-hi todo guibg=None guifg=Yellow
 
 "Linters to use
 "If nothing is precised, the default linters are used
@@ -205,8 +188,8 @@ let g:ale_python_flake8_options='--ignore E111,E114'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='dracula'
-let g:airline#extensions#tabline#enabled=0
+let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
 let g:airline#extensions#tabline#show_tab_type=0
@@ -229,6 +212,7 @@ let g:airline_symbols.readonly='🔒'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.branch = ''
+
 
 "FZF
 "FZF is the fuzzy finder
@@ -260,6 +244,11 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+"UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
 "And also the grepper
 "Install ag because it is good
 nnoremap <Leader>h :Ag<CR>
@@ -272,6 +261,8 @@ noremap <Leader>k :Commits <CR>
 noremap <Leader>K :BCommits <CR>
 
 "Nerdtree
+let g:closetag_close_shortcut = '<leader>>'
+
 "Ignore object and tmp ~files
 nnoremap tt :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
