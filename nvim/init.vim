@@ -3,6 +3,12 @@
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.local/share/nvim/plugged')
+"Camel/Snake case motion
+"Indent object
+"Multiple cursors
+Plug 'bkad/CamelCaseMotion'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'terryma/vim-multiple-cursors'
 
 "Colorscheme
 Plug 'dracula/vim'
@@ -14,8 +20,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 "File explorer
 "Quick rename
+"MRU
 Plug 'scrooloose/nerdtree'
 Plug 'danro/rename.vim'
+Plug 'vim-scripts/mru.vim'
 
 "FZF
 "Git support
@@ -40,7 +48,9 @@ Plug 'plasticboy/vim-markdown'
 "Python autocompletion
 Plug 'davidhalter/jedi-vim'
 
+"Comment toggle
 "HTML auto-close tags
+Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag'
 
 "Snippets
@@ -49,7 +59,7 @@ Plug 'honza/vim-snippets'
 
 "Zen Mode
 Plug 'junegunn/goyo.vim'
-
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 "Disable arrow keys
@@ -64,6 +74,9 @@ colorscheme gruvbox
 
 "Remap leader
 let mapleader=" "
+
+"Camel/Snake case motion
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 "Splits
 "Split on right and on below
@@ -96,9 +109,6 @@ nnoremap <leader>z :Goyo<CR>
 
 "Remap escape
 inoremap jj <Esc>
-
-"Word for CamelCase words
-nnoremap <leader>w /\u<CR>:nohlsearch<CR>
 
 "Insert just one character
 :nnoremap <leader>i i<Space><Esc>r
@@ -265,7 +275,7 @@ noremap <Leader>K :BCommits <CR>
 let g:closetag_close_shortcut = '<leader>>'
 
 "Ignore object and tmp ~files
-nnoremap tt :NERDTreeToggle<CR>
+noremap <Leader>t :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
