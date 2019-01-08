@@ -44,6 +44,9 @@ alias pip "pip3"
 ## CHMOD
 alias cx "chmod +x"
 
+## DOCKER
+alias d "docker"
+
 ## BAT
 alias cat "bat --style=numbers,changes"
 
