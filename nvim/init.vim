@@ -3,6 +3,7 @@
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.local/share/nvim/plugged')
+
 "Camel/Snake case motion
 "Indent object
 "Multiple cursors
@@ -46,7 +47,9 @@ Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 
 "Python autocompletion
+"Black formatting
 Plug 'davidhalter/jedi-vim'
+Plug 'ambv/black'
 
 "Comment toggle
 "HTML auto-close tags
@@ -132,15 +135,16 @@ nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 
 "Identation
-"2 spaces indentations
 filetype plugin indent on
 syntax enable
 set nosmartindent
 set cindent
-set shiftwidth=2
-set list
+set shiftwidth=4
+set softtabstop=4
 set expandtab
-set listchars=tab:..,trail:~
+set list
+set listchars=tab:>-,trail:~
+
 
 "Remap save and quit
 nnoremap qq :x<CR>
@@ -190,7 +194,7 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 "Override python.vim defaults
 "Ignored rules are for 2 spaces indenting and spaces around arithmetic operators
 let g:python_recommended_style=0
-let g:ale_python_flake8_options='--ignore E111,E114,E226'
+let g:ale_python_flake8_options='--ignore E111,E114,E226 --max-line-length=88'
 
 "Airline
 "Airline is the statusbar framework
@@ -280,6 +284,11 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\~$']
+
+"Black
+"Run on save
+let g:black_virtualenv="~/.virtualenvs/black.vim"
+autocmd BufWritePre *.py execute ':Black'
 
 "Run python file
 autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python' shellescape(@%, 1)<CR>
