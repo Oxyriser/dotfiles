@@ -192,8 +192,8 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 
 "Ale Python linting
 "Override python.vim defaults
-"Ignored rules are for 2 spaces indenting and spaces around arithmetic operators
 let g:python_recommended_style=0
+let g:ale_linters = ['flake8', 'pylint']
 
 "Airline
 "Airline is the statusbar framework
