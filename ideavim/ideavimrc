@@ -36,11 +36,6 @@ noremap <C-K> {
 "Remap save and quit
 nnoremap qq :x<CR>
 
-"Highligh Search colors
-hi Search guibg=#44475a	guifg=NONE
-hi IncSearch guibg=NONE guifg=LightGrey
-
 "Show matching chars
 "Like () or {}
 set showmatch
-hi MatchParen guibg=NONE guifg=Yellow gui=bold
