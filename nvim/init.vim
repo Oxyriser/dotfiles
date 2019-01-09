@@ -194,7 +194,6 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 "Override python.vim defaults
 "Ignored rules are for 2 spaces indenting and spaces around arithmetic operators
 let g:python_recommended_style=0
-let g:ale_python_flake8_options='--ignore E111,E114,E226 --max-line-length=88'
 
 "Airline
 "Airline is the statusbar framework
