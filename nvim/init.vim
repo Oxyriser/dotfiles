@@ -181,6 +181,7 @@ let g:ale_linters={
       \'javascript': ['eslint'],
       \'c': ['clang'],
       \'cpp': ['clang'],
+      \'python': ['flake8', 'pylint'],
       \}
 
 "Ale C/C++ linting
@@ -190,10 +191,8 @@ let g:ale_linters={
 let g:ale_c_clang_options='-Wall -Wextra -Wshadow --std=gnu11 -O0'
 let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
 
-"Ale Python linting
 "Override python.vim defaults
 let g:python_recommended_style=0
-let g:ale_linters = ['flake8', 'pylint']
 
 "Airline
 "Airline is the statusbar framework
