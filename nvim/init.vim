@@ -181,7 +181,7 @@ let g:ale_linters={
       \'javascript': ['eslint'],
       \'c': ['clang'],
       \'cpp': ['clang'],
-      \'python': ['flake8', 'pylint'],
+      \'python': ['flake8'],
       \}
 
 "Ale C/C++ linting
