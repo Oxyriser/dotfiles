@@ -41,6 +41,9 @@ alias py "python3"
 alias ipy "ipython3"
 alias pip "pip3"
 
+## CRYSTAL
+alias cr "crystal"
+
 ## CHMOD
 alias cx "chmod +x"
 

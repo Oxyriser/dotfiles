@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 
 "Languages support
+Plug 'rhysd/vim-crystal'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
@@ -169,6 +170,9 @@ high ALEWarningSign guibg=NONE guifg=orange
 set laststatus=2
 set noshowmode
 set noshowcmd
+
+"Unset vim-crystal mappings
+let g:crystal_define_mappings=0
 
 "Ale signs
 let g:ale_set_highlights=0
