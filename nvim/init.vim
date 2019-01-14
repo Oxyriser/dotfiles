@@ -47,6 +47,9 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 
+"EditorConfig support
+Plug 'editorconfig/editorconfig-vim'
+
 "Python autocompletion
 "Black formatting
 Plug 'davidhalter/jedi-vim'
