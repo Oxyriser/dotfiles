@@ -1,57 +1,57 @@
 ## NVIM
-alias e "nvim"
-alias v "nvim -R"
+abbr -a e "nvim"
+abbr -a v "nvim -R"
 
 ## EXA
-alias ls "exa"
-alias l "exa -l"
-alias la "exa -la"
-alias t "exa --tree"
+abbr -a ls "exa"
+abbr -a l "exa -l"
+abbr -a la "exa -la"
+abbr -a t "exa --tree"
 
 ## GIT
-alias g "git"
-alias gd "git diff"
-alias gu "git pull"
-alias gst "git status"
-alias gck "git checkout"
-alias ga "git add"
-alias gaa "git add --all"
-alias gc "git commit"
-alias gca "git commit --all"
-alias gp "git push"
-alias gt "git log --oneline --decorate --all --graph"
+abbr -a g "git"
+abbr -a gd "git diff"
+abbr -a gu "git pull"
+abbr -a gst "git status"
+abbr -a gck "git checkout"
+abbr -a ga "git add"
+abbr -a gaa "git add --all"
+abbr -a gc "git commit"
+abbr -a gca "git commit --all"
+abbr -a gp "git push"
+abbr -a gt "git log --oneline --decorate --all --graph"
 
 ## DU
-alias du "du -h"
-alias ddu "du -sh"
+abbr -a du "du -h"
+abbr -a ddu "du -sh"
 
 ## RM
-alias rrm "rm -Rf"
+abbr -a rrm "rm -Rf"
 
 ## CP
-alias cp "cp -v"
-alias ccp "cp -R"
+abbr -a cp "cp -v"
+abbr -a ccp "cp -R"
 
 ## MV
-alias mv "mv -v"
+abbr -a mv "mv -v"
 
 ## PYTHON
-alias python "python3"
-alias py "python3"
-alias ipy "ipython3"
-alias pip "pip3"
+abbr -a python "python3"
+abbr -a py "python3"
+abbr -a ipy "ipython3"
+abbr -a pip "pip3"
 
 ## CRYSTAL
-alias cr "crystal"
+abbr -a cr "crystal"
 
 ## CHMOD
-alias cx "chmod +x"
+abbr -a cx "chmod +x"
 
 ## DOCKER
-alias d "docker"
+abbr -a d "docker"
 
 ## BAT
-alias cat "bat --style=numbers,changes"
+abbr -a cat "bat --style=numbers,changes"
 
 ## CD
-alias ... "cd ../.."
+abbr -a ... "cd ../.."
