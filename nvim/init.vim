@@ -47,6 +47,9 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 
+"Emmet
+Plug 'mattn/emmet-vim'
+
 "EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
 
@@ -118,8 +121,8 @@ nnoremap <leader>z :Goyo<CR>
 inoremap jj <Esc>
 
 "Insert just one character
-:nnoremap <leader>i i<Space><Esc>r
-:nnoremap <leader>a a<Space><Esc>r
+nnoremap <leader>i i<Space><Esc>r
+nnoremap <leader>a a<Space><Esc>r
 
 "Remap page moves
 "Avoid scrolling one line by one line
