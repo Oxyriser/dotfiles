@@ -177,6 +177,11 @@ set laststatus=2
 set noshowmode
 set noshowcmd
 
+"Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key= '<leader>'
+
 "Unset vim-crystal mappings
 let g:crystal_define_mappings=0
 
