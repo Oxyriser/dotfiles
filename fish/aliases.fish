@@ -35,6 +35,9 @@ abbr -a ccp "cp -R"
 ## MV
 abbr -a mv "mv -v"
 
+## MKDIR
+abbr -a mmkdir "mkdir -p"
+
 ## PYTHON
 abbr -a python "python3"
 abbr -a py "python3"
