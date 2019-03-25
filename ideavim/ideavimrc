@@ -16,7 +16,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-nnoremap & :nohl<CR>
+nnoremap <silent> & :nohl<CR>
 
 "Remap escape
 inoremap jj <Esc>
@@ -25,8 +25,8 @@ inoremap jj <Esc>
 nnoremap <leader>w /\u<CR>:nohlsearch<CR>
 
 "Insert just one character
-:nnoremap <leader>i i<Space><Esc>r
-:nnoremap <leader>a a<Space><Esc>r
+nnoremap <leader>i i<Space><Esc>r
+nnoremap <leader>a a<Space><Esc>r
 
 "Remap page moves
 "Avoid scrolling one line by one line
