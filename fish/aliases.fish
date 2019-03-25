@@ -1,60 +1,68 @@
-## NVIM
-abbr -a e "nvim"
-abbr -a v "nvim -R"
+if status --is-interactive
+    ## NVIM
+    abbr -a -g e "nvim"
+    abbr -a -g v "nvim -R"
 
-## EXA
-abbr -a ls "exa"
-abbr -a l "exa -l"
-abbr -a la "exa -la"
-abbr -a t "exa --tree"
+    ## EXA
+    abbr -a -g ls "exa"
+    abbr -a -g l "exa -l"
+    abbr -a -g la "exa -la"
+    abbr -a -g t "exa --tree"
 
-## GIT
-abbr -a g "git"
-abbr -a gd "git diff"
-abbr -a gu "git pull"
-abbr -a gst "git status"
-abbr -a gck "git checkout"
-abbr -a ga "git add"
-abbr -a gaa "git add --all"
-abbr -a gc "git commit"
-abbr -a gca "git commit --all"
-abbr -a gp "git push"
-abbr -a gt "git log --oneline --decorate --all --graph"
+    ## GIT
+    abbr -a -g g "git"
+    abbr -a -g gd "git diff"
+    abbr -a -g gu "git pull"
+    abbr -a -g gst "git status"
+    abbr -a -g gck "git checkout"
+    abbr -a -g ga "git add"
+    abbr -a -g gaa "git add --all"
+    abbr -a -g gc "git commit"
+    abbr -a -g gca "git commit --all"
+    abbr -a -g gp "git push"
+    abbr -a -g gt "git log --oneline --decorate --all --graph"
 
-## DU
-abbr -a du "du -h"
-abbr -a ddu "du -sh"
+    ## DU
+    abbr -a -g du "du -h"
+    abbr -a -g ddu "du -sh"
 
-## RM
-abbr -a rrm "rm -Rf"
+    ## RM
+    abbr -a -g rrm "rm -Rf"
 
-## CP
-abbr -a cp "cp -v"
-abbr -a ccp "cp -R"
+    ## CD
+    function cl
+      cd $argv[1] ; and exa -l
+    end
+    abbr -a -g desk "cd $HOME/Desktop"
 
-## MV
-abbr -a mv "mv -v"
+    ## CP
+    abbr -a -g cp "cp -v"
+    abbr -a -g ccp "cp -R"
 
-## MKDIR
-abbr -a mmkdir "mkdir -p"
+    ## MV
+    abbr -a -g mv "mv -v"
 
-## PYTHON
-abbr -a python "python3"
-abbr -a py "python3"
-abbr -a ipy "ipython3"
-abbr -a pip "pip3"
+    ## MKDIR
+    abbr -a -g mmkdir "mkdir -p"
 
-## CRYSTAL
-abbr -a cr "crystal"
+    ## PYTHON
+    abbr -a -g python "python3"
+    abbr -a -g py "python3"
+    abbr -a -g ipy "ipython3"
+    abbr -a -g pip "pip3"
 
-## CHMOD
-abbr -a cx "chmod +x"
+    ## CRYSTAL
+    abbr -a -g cr "crystal"
 
-## DOCKER
-abbr -a d "docker"
+    ## CHMOD
+    abbr -a -g cx "chmod +x"
 
-## BAT
-abbr -a cat "bat --style=numbers,changes"
+    ## DOCKER
+    abbr -a -g d "docker"
 
-## CD
-abbr -a ... "cd ../.."
+    ## BAT
+    abbr -a -g cat "bat --style=numbers,changes"
+
+    ## CD
+    abbr -a -g ... "cd ../.."
+end
