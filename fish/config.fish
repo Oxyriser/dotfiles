@@ -43,18 +43,18 @@ set -gx EDITOR nvim
 
 # Dracula themed man
 set -gx LESS_TERMCAP_mb (set_color -o red)
-set -gx LESS_TERMCAP_md (set_color -o yellow)
+set -gx LESS_TERMCAP_md (set_color -o magenta)
 set -gx LESS_TERMCAP_me (set_color normal)
 set -gx LESS_TERMCAP_so (set_color -r)
 set -gx LESS_TERMCAP_se (set_color normal)
-set -gx LESS_TERMCAP_us (set_color -o magenta)
+set -gx LESS_TERMCAP_us (set_color -o cyan)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
 # Locales
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "Gruvbox"
+set -gx BAT_THEME "ayu-mirage"
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
