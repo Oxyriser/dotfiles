@@ -48,8 +48,10 @@ map <Leader>ex :tabopen chrome://extensions<CR>
 
 map <Leader>gh :tabopen https://github.com/Oxyriser<CR>
 map <Leader>Gh :open https://github.com/Oxyriser<CR>
+map <Leader>ds :tabopen https://discordapp.com/channels/@me/<CR>
+map <Leader>Ds :open https://discordapp.com/channels/@me/<CR>
 map <Leader>tw :tabopen http://twitter.com<CR>
-map <Leader>Tw :open http://twitter<CR>
+map <Leader>Tw :open http://twitter.com<CR>
 map <Leader>tp :tabopen https://synapses.telecom-paristech.fr/<CR>
 map <Leader>Tp :open https://synapses.telecom-paristech.fr/<CR>
 map <Leader>rd :tabopen https://www.reddit.com/<CR>

@@ -303,7 +303,7 @@ let NERDTreeIgnore=['\.o$', '\~$']
 "Black
 "Run on save
 let g:black_virtualenv="~/.virtualenvs/black.vim"
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'
 
 "Run python file
 autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python' shellescape(@%, 1)<CR>
