@@ -15,6 +15,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'chriskempson/base16-vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -81,8 +82,7 @@ noremap <Right> <Nop>
 
 "Colors
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme dracula
 
 "Remap leader
 let mapleader=" "
@@ -218,7 +218,7 @@ let g:python_recommended_style=0
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='ayu'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0

@@ -54,7 +54,7 @@ set -gx LESS_TERMCAP_ue (set_color normal)
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "ayu-mirage"
+set -gx BAT_THEME "dracula"
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
