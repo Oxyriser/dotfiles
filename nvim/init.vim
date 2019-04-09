@@ -306,4 +306,4 @@ let g:black_virtualenv="~/.virtualenvs/black.vim"
 "autocmd BufWritePre *.py execute ':Black'
 
 "Run python file
-autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python3' shellescape(@%, 1)<CR>
