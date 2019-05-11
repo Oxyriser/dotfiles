@@ -1,1 +1,1 @@
-dracula.fish
+gruvbox.fish

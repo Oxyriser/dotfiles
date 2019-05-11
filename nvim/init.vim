@@ -6,16 +6,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Camel/Snake case motion
 "Indent object
-"Multiple cursors
-Plug 'bkad/CamelCaseMotion'
+Plug 'chaoren/vim-wordmotion'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'terryma/vim-multiple-cursors'
 
 "Colorscheme
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
-Plug 'chriskempson/base16-vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -38,16 +34,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 
 "Languages support
-Plug 'rhysd/vim-crystal'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'dag/vim-fish'
 Plug 'justinmk/vim-syntax-extra' "For C family
-Plug 'tomlion/vim-solidity'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
 Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
+Plug 'tomlion/vim-solidity'
+Plug 'rhysd/vim-crystal'
 Plug 'lervag/vimtex'
-Plug 'plasticboy/vim-markdown'
+Plug 'dag/vim-fish'
 
 "Emmet
 Plug 'mattn/emmet-vim'
@@ -61,9 +57,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ambv/black'
 
 "Comment toggle
-"HTML auto-close tags
 Plug 'tpope/vim-commentary'
-Plug 'alvan/vim-closetag'
 
 "Snippets
 Plug 'SirVer/ultisnips'
@@ -72,6 +66,7 @@ Plug 'honza/vim-snippets'
 "Zen Mode
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
 call plug#end()
 
 "Disable arrow keys
@@ -82,13 +77,14 @@ noremap <Right> <Nop>
 
 "Colors
 set termguicolors
-colorscheme dracula
+colorscheme gruvbox
 
 "Remap leader
 let mapleader=" "
 
 "Camel/Snake case motion
-call camelcasemotion#CreateMotionMappings('<leader>')
+let g:wordmotion_prefix = '<Leader>'
+let g:wordmotion_spaces = '_-'
 
 "Splits
 "Split on right and on below
@@ -218,7 +214,7 @@ let g:python_recommended_style=0
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -250,7 +246,7 @@ let g:airline_symbols.branch=''
 "Choose a layout
 "Get the good colors
 "Hide the statusline when in FZF
-noremap <silent> ff :FZF <CR>
+noremap <silent> <leader>f :FZF <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
@@ -301,9 +297,16 @@ let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\~$']
 
 "Black
-"Run on save
 let g:black_virtualenv="~/.virtualenvs/black.vim"
-"autocmd BufWritePre *.py execute ':Black'
 
 "Run python file
 autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python3' shellescape(@%, 1)<CR>
+
+"Sort lines by lengh
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort! n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
+
+command -range -nargs=0 Lsort :<line1>,<line2>call SortLines()
