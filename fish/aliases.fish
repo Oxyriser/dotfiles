@@ -22,6 +22,9 @@ if status --is-interactive
     abbr -a -g gp "git push"
     abbr -a -g gt "git log --oneline --decorate --all --graph"
 
+    ## CLEAR
+    abbr c clear
+
     ## DU
     abbr -a -g du "du -h"
     abbr -a -g ddu "du -sh"
