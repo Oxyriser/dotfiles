@@ -92,8 +92,8 @@ let g:wordmotion_spaces = '_-'
 "Use :r and :b
 set splitright
 set splitbelow
-cabbrev r split
-cabbrev b vsplit
+cnoreabbrev r split
+cnoreabbrev b vsplit
 
 "Search
 "Search as you type
@@ -180,8 +180,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key= '<tab>'
 
-"Unset vim-crystal mappings
+"Crystal
 let g:crystal_define_mappings=0
+let g:ale_crystal_ameba_executable='/usr/local/bin/ameba'
 
 "Ale signs
 let g:ale_set_highlights=0
@@ -196,6 +197,13 @@ let g:ale_linters={
       \'cpp': ['clang'],
       \'python': ['flake8'],
       \}
+
+"Fixers to use
+let g:ale_fixers = {
+    \'*': ['remove_trailing_lines', 'trim_whitespace'],
+    \'python': ['isort', 'black'],
+    \}
+cnoreabbrev f ALEFix
 
 "Ale C/C++ linting
 "Use basic flags
