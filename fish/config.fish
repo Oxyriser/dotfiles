@@ -33,10 +33,12 @@ function fish_user_key_bindings
   bind -M insert \ck fzf-cd-widget
 end
 
-
 # VirtualFish
 set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
 eval (python -m virtualfish)
+
+# Go
+set -gx GOPATH $HOME/Documents/go
 
 # Default editor is nvim
 set -gx EDITOR nvim

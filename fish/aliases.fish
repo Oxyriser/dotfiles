@@ -12,14 +12,18 @@ if status --is-interactive
     ## GIT
     abbr -a -g g "git"
     abbr -a -g gd "git diff"
+    abbr -a -g gds "git diff --stat"
     abbr -a -g gu "git pull"
     abbr -a -g gst "git status"
-    abbr -a -g gck "git checkout"
+    # abbr -a -g gck "git checkout"
+    abbr -a -g gsw "git switch"
+    abbr -a -g grs "git restore"
     abbr -a -g ga "git add"
     abbr -a -g gaa "git add --all"
     abbr -a -g gc "git commit"
     abbr -a -g gca "git commit --all"
     abbr -a -g gp "git push"
+    abbr -a -g gm "git log --name-status"
     abbr -a -g gt "git log --oneline --decorate --all --graph"
 
     ## CLEAR
@@ -62,9 +66,11 @@ if status --is-interactive
 
     ## DOCKER
     abbr -a -g d "docker"
+    abbr -a -g dc "docker-compose"
+
 
     ## BAT
-    abbr -a -g cat "bat --style=numbers,changes"
+    abbr -a -g cat "bat"
 
     ## CD
     abbr -a -g ... "cd ../.."

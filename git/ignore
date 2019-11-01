@@ -27,4 +27,4 @@ Temporary Items
 
 # Python
 *.pyc
-venv
+__pycache__

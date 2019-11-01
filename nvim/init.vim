@@ -35,6 +35,7 @@ Plug 'w0rp/ale'
 
 "Languages support
 Plug 'justinmk/vim-syntax-extra' "For C family
+Plug 'elixir-editors/vim-elixir'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
@@ -42,6 +43,7 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
 Plug 'tomlion/vim-solidity'
 Plug 'rhysd/vim-crystal'
+Plug 'elmcast/elm-vim'
 Plug 'lervag/vimtex'
 Plug 'dag/vim-fish'
 
@@ -51,9 +53,7 @@ Plug 'mattn/emmet-vim'
 "EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
 
-"Python autocompletion
 "Black formatting
-Plug 'davidhalter/jedi-vim'
 Plug 'ambv/black'
 
 "Comment toggle
@@ -66,6 +66,13 @@ Plug 'honza/vim-snippets'
 "Zen Mode
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+"Completion
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-pyclang'
 
 call plug#end()
 
@@ -202,6 +209,7 @@ let g:ale_linters={
 let g:ale_fixers = {
     \'*': ['remove_trailing_lines', 'trim_whitespace'],
     \'python': ['isort', 'black'],
+    \'elixir': ['mix_format'],
     \}
 cnoreabbrev f ALEFix
 
@@ -277,6 +285,10 @@ let g:fzf_colors =
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+"ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
