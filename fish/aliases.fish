@@ -21,6 +21,7 @@ if status --is-interactive
     abbr -a -g ga "git add"
     abbr -a -g gaa "git add --all"
     abbr -a -g gc "git commit"
+    abbr -a -g gc "git commit -m"
     abbr -a -g gca "git commit --all"
     abbr -a -g gp "git push"
     abbr -a -g gm "git log --name-status"
