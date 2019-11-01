@@ -55,9 +55,6 @@ set -gx LESS_TERMCAP_ue (set_color normal)
 # Locales
 set -gx LC_ALL fr_FR.UTF-8
 
-# Bat
-set -gx BAT_THEME "gruvbox"
-
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
 
