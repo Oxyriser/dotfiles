@@ -6,8 +6,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Camel/Snake case motion
 "Indent object
+"Surrondings
 Plug 'chaoren/vim-wordmotion'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-surround'
 
 "Colorscheme
 Plug 'dracula/vim'
@@ -106,7 +108,7 @@ cnoreabbrev b vsplit
 "Search as you type
 "Highlight results
 "Smart case
-"Use qq to remove the highlight
+"Use & to remove the highlight
 set incsearch
 set hlsearch
 set ignorecase
@@ -157,9 +159,8 @@ set expandtab
 set list
 set listchars=tab:>-,trail:~
 
-
 "Remap save and quit
-nnoremap qq :x<CR>
+nnoremap <silent> qq :x<CR>
 
 "Show matching chars
 "Like () or {}
@@ -307,8 +308,6 @@ noremap <silent> <Leader>k :Commits <CR>
 noremap <silent> <Leader>K :BCommits <CR>
 
 "Nerdtree
-let g:closetag_close_shortcut = '<leader>>'
-
 "Ignore object and tmp ~files
 noremap <Leader>t :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
