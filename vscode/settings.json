@@ -1,0 +1,186 @@
+{
+    "editor.fontFamily": "'Fira Code', Ioveska, 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.fontSize": 16,
+
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "[python]": {
+        "editor.tabSize": 4,
+        "files.insertFinalNewline": true,
+    },
+
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "explorer.confirmDelete": false,
+
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": true, // Breadcrumb above editor
+    "explorer.openEditors.visible": 0, // Show opened files
+    "window.titleBarStyle": "custom", // Otherwise the titlebar color is dictated by the OS
+
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.activityBar.visible": false, // Left bar
+    "workbench.statusBar.visible": true, // Bottom bar
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": false, // Disable the preview on single click
+    "editor.suggestSelection": "first",
+
+    "files.exclude": { // Files are not show in the UI explorer
+      // Python stuff
+      "**/__pycache__/": true,
+      "**/*.pyc": true,
+      "**/.mypy_cache/": true,
+      // Jetbrains
+      "**/.idea/": true,
+      // Elm
+      "**/elm-stuff/": true,
+      // Haskell
+      "**/.stack-work": true,
+    },
+
+    "files.associations": {
+    ".eslintrc": "jsonc",
+    "*.prisma": "graphql"
+    },
+
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.folders.color": "#fdd835",
+
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.mypyEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+
+    
+    "elm.compiler": "/usr/local/lib/node_modules/elm/bin/elm",
+    "elm.formatCommand": "/usr/local/lib/node_modules/elm-format/bin/elm-format",
+
+    "go.useLanguageServer": true,
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+      "--fast"
+    ],
+    "go.formatTool": "goimports",
+    "go.autocompleteUnimportedPackages": true,
+
+    "java.configuration.checkProjectSettingsExclusions": false,
+
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "eslint.run": "onSave",
+
+    "git.autofetch": true,
+    "git.autofetchPeriod": 120,
+    "git.autoStash": true,
+    "gitblame.infoMessageFormat": "${commit.summary} (${commit.hash_short,7})",
+
+    "vim.leader": "<space>",
+    "vim.visualstar": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/Cellar/neovim/0.4.2/bin/nvim",
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.smartcase": true,
+    "vim.surround": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["&"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["<leader>", "i"],
+            "after": ["i", " ", "<Esc>", "r"]
+        },
+        {
+            "before": ["<leader>", "a"],
+            "after": ["a", " ", "<Esc>", "r"]
+        },
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["}"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["{"]
+        },
+        {
+            "before": ["g", "f"],
+            "commands": ["workbench.action.focusSideBar"]
+        },
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+          "before": ["q", "q"],
+          "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+          "before": ["<C-f>"],
+          "commands": ["editor.action.formatDocument"]
+        },
+        {
+          "before": ["<leader>", "z"],
+          "commands": ["workbench.action.toggleZenMode"]
+        },
+   ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+          "before": ["<C-f>"],
+          "commands": ["editor.action.formatSelection"]
+        },
+        // Don't overwrite the clipboard with what is being overwritten
+        {
+            "before": ["p"],
+            "after": ["p", "g", "v", "y"]
+        },
+    ],
+    "[haskell]": {
+      "editor.defaultFormatter": "ilyakooo0.ormolu"
+    },
+}
