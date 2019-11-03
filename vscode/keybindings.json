@@ -15,6 +15,19 @@
         // Toggle bottom pane
     },
     {
+        "key": "cmd+e",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorFocus"
+        // Focus side bar from editor
+
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus"
+        // Focus editor from side bar
+    },
+    {
       "key": "space",
       "command": "renameFile",
       "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
@@ -24,24 +37,8 @@
       "command": "filesExplorer.openFilePreserveFocus",
       "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
     },
-
     {
       "key": "shift+cmd+g",
       "command": "workbench.view.scm"
-    },
-    {
-      "key": "shift+cmd+g",
-      "command": "-editor.action.previousMatchFindAction",
-      "when": "editorFocus"
-    },
-    {
-      "key": "shift+cmd+g",
-      "command": "-workbench.action.terminal.findPreviousTerminalFocus",
-      "when": "terminalFocus"
-    },
-    {
-      "key": "shift+cmd+g",
-      "command": "-workbench.action.terminal.findPrevious",
-      "when": "terminalFindWidgetFocused"
     },
 ]
