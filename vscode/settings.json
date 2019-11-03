@@ -58,15 +58,16 @@
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
 
+    "[haskell]": {
+      "editor.defaultFormatter": "ilyakooo0.ormolu"
+    },
     
     "elm.compiler": "/usr/local/lib/node_modules/elm/bin/elm",
     "elm.formatCommand": "/usr/local/lib/node_modules/elm-format/bin/elm-format",
 
     "go.useLanguageServer": true,
     "go.lintTool": "golangci-lint",
-    "go.lintFlags": [
-      "--fast"
-    ],
+    "go.lintFlags": ["--fast"],
     "go.formatTool": "goimports",
     "go.autocompleteUnimportedPackages": true,
 
@@ -75,15 +76,15 @@
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.intelliSenseMode": "clang-x64",
 
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "eslint.run": "onSave",
     "eslint.validate": [
       "javascript",
       "javascriptreact",
       "typescript",
       "typescriptreact"
     ],
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "eslint.run": "onSave",
 
     "git.autofetch": true,
     "git.autofetchPeriod": 120,
@@ -180,7 +181,4 @@
             "after": ["p", "g", "v", "y"]
         },
     ],
-    "[haskell]": {
-      "editor.defaultFormatter": "ilyakooo0.ormolu"
-    },
 }
