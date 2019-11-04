@@ -28,7 +28,7 @@ if status --is-interactive
     abbr -a -g gt "git log --oneline --decorate --all --graph"
 
     ## CLEAR
-    abbr c clear
+    abbr -a -g c "clear"
 
     ## DU
     abbr -a -g du "du -h"
