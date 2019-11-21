@@ -8,6 +8,7 @@ if status --is-interactive
     abbr -a -g l "exa -l"
     abbr -a -g la "exa -la"
     abbr -a -g t "exa --tree"
+    abbr -a -g t1 "exa --tree --level 1"
 
     ## GIT
     abbr -a -g g "git"
@@ -15,24 +16,23 @@ if status --is-interactive
     abbr -a -g gds "git diff --stat"
     abbr -a -g gu "git pull"
     abbr -a -g gst "git status"
-    # abbr -a -g gck "git checkout"
     abbr -a -g gsw "git switch"
     abbr -a -g grs "git restore"
     abbr -a -g ga "git add"
     abbr -a -g gaa "git add --all"
     abbr -a -g gc "git commit"
-    abbr -a -g gc "git commit -m"
-    abbr -a -g gca "git commit --all"
+    abbr -a -g gcm "git commit -m"
+    abbr -a -g gamend "git commit --all --amend --no-edit"
     abbr -a -g gp "git push"
-    abbr -a -g gm "git log --name-status"
+    abbr -a -g gl "git log --name-status"
     abbr -a -g gt "git log --oneline --decorate --all --graph"
 
     ## CLEAR
     abbr -a -g c "clear"
 
     ## DU
-    abbr -a -g du "du -h"
-    abbr -a -g ddu "du -sh"
+    abbr -a -g du "du -sh"
+    abbr -a -g ddu "du -h"
 
     ## RM
     abbr -a -g rrm "rm -Rf"
@@ -51,10 +51,7 @@ if status --is-interactive
     abbr -a -g mmkdir "mkdir -p"
 
     ## PYTHON
-    abbr -a -g python "python3"
     abbr -a -g py "python3"
-    abbr -a -g ipy "ipython3"
-    abbr -a -g pip "pip3"
 
     ## CRYSTAL
     abbr -a -g cr "crystal"
@@ -65,7 +62,6 @@ if status --is-interactive
     ## DOCKER
     abbr -a -g d "docker"
     abbr -a -g dc "docker-compose"
-
 
     ## BAT
     abbr -a -g cat "bat"
