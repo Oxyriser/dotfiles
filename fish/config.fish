@@ -1,9 +1,6 @@
 # Get the aliases
 source $HOME/.dotfiles/fish/aliases.fish
 
-# Get the functions
-source $HOME/.dotfiles/fish/functions.fish
-
 # Set fzf theme to dracula
 source $HOME/.dotfiles/fzf/fzf.fish
 

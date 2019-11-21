@@ -38,9 +38,6 @@ if status --is-interactive
     abbr -a -g rrm "rm -Rf"
 
     ## CD
-    function cl
-      cd $argv[1] ; and exa -l
-    end
     abbr -a -g desk "cd $HOME/Desktop"
 
     ## CP
