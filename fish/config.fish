@@ -1,7 +1,7 @@
 # Get the aliases
 source $HOME/.dotfiles/fish/aliases.fish
 
-# Set fzf theme to dracula
+# Set fzf theme
 source $HOME/.dotfiles/fzf/fzf.fish
 
 # Disable greeting
@@ -40,7 +40,7 @@ set -gx GOPATH $HOME/Documents/go
 # Default editor is nvim
 set -gx EDITOR nvim
 
-# Dracula themed man
+# Themed man
 set -gx LESS_TERMCAP_mb (set_color -o red)
 set -gx LESS_TERMCAP_md (set_color -o magenta)
 set -gx LESS_TERMCAP_me (set_color normal)
