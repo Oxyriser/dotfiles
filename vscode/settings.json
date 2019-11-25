@@ -3,6 +3,7 @@
     "editor.fontLigatures": true,
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
+    "terminal.integrated.fontSize": 15,
 
     "editor.detectIndentation": false,
     "editor.tabSize": 2,
@@ -19,6 +20,8 @@
     "breadcrumbs.enabled": true, // Breadcrumb above editor
     "explorer.openEditors.visible": 0, // Show opened files
     "window.titleBarStyle": "custom", // Otherwise the titlebar color is dictated by the OS
+    "editor.lightbulb.enabled": false,
+    "extensions.ignoreRecommendations": false,
 
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.activityBar.visible": false, // Left bar
@@ -26,6 +29,7 @@
     "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false, // Disable the preview on single click
     "editor.suggestSelection": "first",
+    "editor.renderLineHighlight": "none",
 
     "files.exclude": { // Files are not show in the UI explorer
       // Python stuff
@@ -61,13 +65,21 @@
     "[haskell]": {
       "editor.defaultFormatter": "ilyakooo0.ormolu"
     },
+    "ghcSimple.maxCompletions": 4,
     
     "elm.compiler": "/usr/local/lib/node_modules/elm/bin/elm",
     "elm.formatCommand": "/usr/local/lib/node_modules/elm-format/bin/elm-format",
 
-    "go.useLanguageServer": true,
+    "go.useLanguageServer": false,
     "go.lintTool": "golangci-lint",
-    "go.lintFlags": ["--fast"],
+    "go.lintFlags": [
+      "-Egolint",
+      "-Einterfacer",
+      "-Elll",
+      "-Eunconvert",
+      "-Eunparam",
+      "--fast"
+    ],
     "go.formatTool": "goimports",
     "go.autocompleteUnimportedPackages": true,
 
@@ -94,7 +106,7 @@
     "vim.leader": "<space>",
     "vim.visualstar": true,
     "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/local/Cellar/neovim/0.4.2/bin/nvim",
+    "vim.neovimPath": "/usr/local/Cellar/neovim/0.4.3/bin/nvim",
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.smartcase": true,
