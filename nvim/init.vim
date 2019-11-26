@@ -1,23 +1,7 @@
 "Plugins
-"Managed via vim-plug
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.local/share/nvim/plugged')
-
-"Camel/Snake case motion
-"Indent object
-"Surrondings
-Plug 'chaoren/vim-wordmotion'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'tpope/vim-surround'
-
-"Colorscheme
-Plug 'dracula/vim'
-Plug 'morhetz/gruvbox'
-
-"Status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 "File explorer
 "Quick rename
@@ -26,63 +10,47 @@ Plug 'scrooloose/nerdtree'
 Plug 'danro/rename.vim'
 Plug 'vim-scripts/mru.vim'
 
+"Camel/Snake case motion
+"Indent object
+"Surrondings
+"Comment toggle
+Plug 'chaoren/vim-wordmotion'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+"Colorscheme
+Plug 'morhetz/gruvbox'
+
+"Status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 "FZF
-"Git support
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-
-"Linting
-Plug 'w0rp/ale'
 
 "Languages support
-Plug 'justinmk/vim-syntax-extra' "For C family
-Plug 'elixir-editors/vim-elixir'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'kh3phr3n/python-syntax'
-Plug 'lifepillar/pgsql.vim'
-Plug 'tomlion/vim-solidity'
-Plug 'rhysd/vim-crystal'
-Plug 'elmcast/elm-vim'
-Plug 'lervag/vimtex'
-Plug 'dag/vim-fish'
-
-"Emmet
-Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
 
 "EditorConfig support
+"Linting
 Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
 
 "Black formatting
 Plug 'ambv/black'
-
-"Comment toggle
-Plug 'tpope/vim-commentary'
 
 "Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-"Zen Mode
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
 "Completion
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-pyclang'
 
 call plug#end()
-
-"Disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 "Colors
 set termguicolors
@@ -101,8 +69,8 @@ let g:wordmotion_spaces = '_-'
 "Use :r and :b
 set splitright
 set splitbelow
-cnoreabbrev r split
-cnoreabbrev b vsplit
+nnoremap <silent> <Leader>b :split<CR>
+nnoremap <silent> <Leader>r :vsplit<CR>
 
 "Search
 "Search as you type
@@ -121,15 +89,12 @@ set lazyredraw
 "Ignore some extensions in wildmenu
 set wildignore+=*.so,*.o,*.swp
 
-"Toggle zen mode
-nnoremap <silent> <leader>z :Goyo<CR>
+"Time waited for key press(es) to complete
+set ttimeout
+set ttimeoutlen=50
 
 "Remap escape
 inoremap jj <Esc>
-
-"Insert just one character
-nnoremap <leader>i i<Space><Esc>r
-nnoremap <leader>a a<Space><Esc>r
 
 "Remap page moves
 "Avoid scrolling one line by one line
@@ -166,27 +131,28 @@ nnoremap <silent> qq :x<CR>
 "Like () or {}
 set showmatch
 
+"Markdown syntax
+let g:vim_markdown_folding_disabled=1
+
 "Signcolumns
 "Avoid any unwanted background
 set signcolumn=yes
 hi clear SignColumn
 
 "And set right Ale colors
-high ALEErrorSign guibg=NONE guifg=red
-high ALEWarningSign guibg=NONE guifg=orange
+hi ALEErrorSign guibg=NONE guifg=red
+hi ALEWarningSign guibg=NONE guifg=orange
 
-"Status line
-"Always show statusline
+"Cleaner vertical split
+hi VertSplit ctermbg=None ctermfg=233
+
 "Hide the mode indicator as it is built in Airline
 "Hide command while typing
+"Cleaner UI
 set laststatus=2
 set noshowmode
 set noshowcmd
-
-"Emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key= '<tab>'
+set shortmess+=WI
 
 "Crystal
 let g:crystal_define_mappings=0
@@ -296,24 +262,17 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
-"And also the grepper
-"Install ag because it is good
+"The silver searcher
 nnoremap <silent> <Leader>h :Ag<CR>
-
-"And also the buffer switcher
-noremap <silent> <Leader>j :Buffers <CR>
-
-"And also the commit explorer
-noremap <silent> <Leader>k :Commits <CR>
-noremap <silent> <Leader>K :BCommits <CR>
 
 "Nerdtree
 "Ignore object and tmp ~files
-noremap <Leader>t :NERDTreeToggle<CR>
+noremap <silent> <Leader>t :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
-let NERDTreeIgnore=['\.o$', '\~$']
+let NERDTreeIgnore=['\.o$', '\.pyc$', '__pycache__']
+let NERDTreeStatusline=""
 
 "Black
 let g:black_virtualenv="~/.virtualenvs/black.vim"
