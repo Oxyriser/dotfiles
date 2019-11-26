@@ -150,10 +150,6 @@
             "after": ["{"]
         },
         {
-            "before": ["g", "f"],
-            "commands": ["workbench.action.focusSideBar"]
-        },
-        {
             "before": [">"],
             "commands": ["editor.action.indentLines"]
         },
@@ -172,6 +168,18 @@
         {
           "before": ["<leader>", "z"],
           "commands": ["workbench.action.toggleZenMode"]
+        },
+        {
+          "before": ["<leader>", "r"],
+          "commands": ["workbench.action.splitEditorRight"]
+        },
+        {
+          "before": ["<leader>", "b"],
+          "commands": ["workbench.action.splitEditorDown"]
+        },
+        {
+          "before": ["<leader>", "f"],
+          "commands": ["workbench.action.quickOpen"]
         },
    ],
     "vim.visualModeKeyBindingsNonRecursive": [
