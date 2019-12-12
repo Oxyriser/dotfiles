@@ -1,9 +1,3 @@
-"Disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
 "Remap leader
 let mapleader=" "
 
@@ -24,10 +18,6 @@ inoremap jj <Esc>
 "Word for CamelCase words
 nnoremap <leader>w /\u<CR>:nohlsearch<CR>
 
-"Insert just one character
-nnoremap <leader>i i<Space><Esc>r
-nnoremap <leader>a a<Space><Esc>r
-
 "Remap page moves
 "Avoid scrolling one line by one line
 noremap <C-J> }
@@ -39,3 +29,13 @@ nnoremap qq :x<CR>
 "Show matching chars
 "Like () or {}
 set showmatch
+
+"Sort lines by lengh
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort! n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
+
+command -range -nargs=0 Lsort :<line1>,<line2>call SortLines()
+
