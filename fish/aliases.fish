@@ -68,4 +68,7 @@ if status --is-interactive
 
     ## CD
     abbr -a -g ... "cd ../.."
+
+    ## WKHTMLTOPDF
+    abbr -a -g htmlpdf "wkhtmltopdf"
 end
