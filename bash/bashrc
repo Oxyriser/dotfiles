@@ -1,0 +1,30 @@
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local EXIT="$?"
+    PS1=""
+
+    local default='\[\e[0m\]'
+    local bold='\[\e[1m\]'
+    local black='\[\e[30m\]'
+    local red='\[\e[31m\]'
+    local green='\[\e[32m\]'
+    local yellow='\[\e[33m\]'
+    local blue='\[\e[34m\]'
+    local magenta='\[\e[35m\]'
+    local cyan='\[\e[36m\]'
+    local grey='\[\e[37m\]'
+
+    if [ $EXIT != 0 ]; then
+        PS1+="${red}($EXIT)\n"
+    fi
+
+    PS1+="${default}${green}\u${grey}@${magenta}\h ${yellow}\w "
+    PS1+="${cyan}$(git rev-parse --abbrev-ref HEAD 2> /dev/null | sed "s/.*/(&) /")"
+    PS1+="${default}\$ "
+}
+
