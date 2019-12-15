@@ -1,9 +1,3 @@
-# Get the aliases
-source $HOME/.dotfiles/fish/aliases.fish
-
-# Set fzf theme
-source $HOME/.dotfiles/fzf/fzf.fish
-
 # Disable greeting
 set fish_greeting
 
@@ -11,7 +5,8 @@ set fish_greeting
 set fish_color_valid_path
 
 # Disable vi cursor mode
-function fish_vi_cursor; end
+function fish_vi_cursor
+end
 
 # Bindings
 function fish_user_key_bindings
@@ -30,17 +25,13 @@ function fish_user_key_bindings
   bind -M insert \ck fzf-cd-widget
 end
 
-# VirtualFish
-set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
-eval (python -m virtualfish)
-
-# Go
-set -gx GOPATH $HOME/Documents/go
+# Locales
+set -gx LC_ALL fr_FR.UTF-8
 
 # Default editor is nvim
 set -gx EDITOR nvim
 
-# Themed man
+# Less
 set -gx LESS_TERMCAP_mb (set_color -o red)
 set -gx LESS_TERMCAP_md (set_color -o magenta)
 set -gx LESS_TERMCAP_me (set_color normal)
@@ -49,11 +40,20 @@ set -gx LESS_TERMCAP_se (set_color normal)
 set -gx LESS_TERMCAP_us (set_color -o cyan)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
-# Locales
-set -gx LC_ALL fr_FR.UTF-8
+# Java
+set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home"
+
+# Go
+set -gx GOPATH $HOME/Documents/go
 
 # Brew
 set -gx HOMEBREW_INSTALL_BADGE "✅" 
 
-# Java
-set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home"
+# PATH
+if not set -q fish_user_paths
+    set -U fish_user_paths "$GOPATH/bin"
+end
+
+# VirtualFish
+set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
+eval (python -m virtualfish)
