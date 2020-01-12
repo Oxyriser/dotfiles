@@ -1480,7 +1480,7 @@ Paste Special.Paste Selection</string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>440 265 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>0 255 700 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2292,9 +2292,12 @@ Paste Special.Paste Selection</string>
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.7beta4</string>
-		<string>3.3.7beta2</string>
-		<string>3.3.8beta1</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.8beta4</string>
+		<string>3.3.8beta3</string>
+		<string>3.3.8beta2</string>
+		<string>3.3.8beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -2322,7 +2325,7 @@ Paste Special.Paste Selection</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{458, 820}</string>
+		<string>{509, 779}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -2331,7 +2334,7 @@ Paste Special.Paste Selection</string>
 	<key>NoSyncLastTipTime</key>
 	<real>598022224.49078095</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>98</integer>
+	<integer>148</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3133,7 +3136,7 @@ Paste Special.Paste Selection</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-14T23:56:39Z</date>
+	<date>2020-01-11T03:23:56Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3142,6 +3145,8 @@ Paste Special.Paste Selection</string>
 	<true/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
+	<key>SeparateWindowTitlePerTab</key>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -3180,6 +3185,8 @@ Paste Special.Paste Selection</string>
 	<array>
 		<string>Paste History</string>
 	</array>
+	<key>TripleClickSelectsFullWrappedLines</key>
+	<true/>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
@@ -5766,7 +5773,7 @@ Paste Special.Paste Selection</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8beta1</string>
+	<string>3.3.8beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
