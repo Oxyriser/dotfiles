@@ -51,7 +51,7 @@ set -gx HOMEBREW_INSTALL_BADGE "✅" 
 
 # PATH
 if not set -q fish_user_paths
-    set -U fish_user_paths "$GOPATH/bin"
+    set -U fish_user_paths "$GOPATH/bin" "$HOME/.cargo/bin"
 end
 
 # VirtualFish
