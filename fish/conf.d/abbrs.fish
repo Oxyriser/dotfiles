@@ -8,7 +8,7 @@ if status --is-interactive
     abbr -a -g l "exa -l"
     abbr -a -g la "exa -la"
     abbr -a -g t "exa --tree"
-    abbr -a -g t1 "exa --tree --level 1"
+    abbr -a -g t2 "exa --tree --level 2"
 
     ## GIT
     abbr -a -g g "git"
@@ -36,9 +36,7 @@ if status --is-interactive
 
     ## RM
     abbr -a -g rrm "rm -Rf"
-
-    ## CD
-    abbr -a -g desk "cd $HOME/Desktop"
+    abbr -a -g rmd "rmdir"
 
     ## CP
     abbr -a -g cp "cp -v"
@@ -52,9 +50,6 @@ if status --is-interactive
 
     ## PYTHON
     abbr -a -g py "python3"
-
-    ## CRYSTAL
-    abbr -a -g cr "crystal"
 
     ## CHMOD
     abbr -a -g cx "chmod +x"
@@ -71,4 +66,10 @@ if status --is-interactive
 
     ## WKHTMLTOPDF
     abbr -a -g htmlpdf "wkhtmltopdf"
+
+    ## LPASS
+    abbr -a -g passwdcopy "lpass show --password --clip"
+
+    ## FFSEND
+    abbr -a -g upload "ffsend upload -c -e 4h"
 end
