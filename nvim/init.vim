@@ -20,7 +20,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
 "Colorscheme
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'haishanh/night-owl.vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -54,7 +55,7 @@ call plug#end()
 
 "Colors
 set termguicolors
-colorscheme gruvbox
+colorscheme night-owl
 
 "Remap leader
 let mapleader=" "
@@ -197,7 +198,7 @@ let g:python_recommended_style=0
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='gruvbox'
+let g:airline_theme='night_owl'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0

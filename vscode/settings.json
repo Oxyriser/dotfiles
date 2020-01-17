@@ -22,7 +22,7 @@
   "problems.showCurrentInStatus": true,
   "editor.lightbulb.enabled": false,
   "extensions.ignoreRecommendations": false,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Night Owl+",
   "workbench.activityBar.visible": false, // Left bar
   "workbench.statusBar.visible": true, // Bottom bar
   "workbench.startupEditor": "none",
