@@ -1,47 +1,57 @@
 [
-    {
-        "key": "cmd+h",
-        "command": "workbench.action.showCommands"
-        // Command palette
-    },
-    {
-        "key": "cmd+t",
-        "command": "workbench.action.togglePanel"
-    },
-    {
-        "key": "cmd+e",
-        "command": "workbench.action.focusSideBar",
-        "when": "editorFocus"
-        // Focus side bar from editor
-
-    },
-    {
-        "key": "cmd+e",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "sideBarFocus"
-        // Focus editor from side bar
-    },
-    {
-      "key": "space",
-      "command": "renameFile",
-      "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-    },
-    {
-      "key": "enter",
-      "command": "filesExplorer.openFilePreserveFocus",
-      "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
-    },
-    {
-      "key": "shift+cmd+r",
-      "command": "editor.action.startFindReplaceAction"
-    },
-    {
-      "key": "shift+cmd+g",
-      "command": "workbench.view.scm"
-    },
-    {
-      "key": "cmd+j",
-      "command": "workbench.action.togglePanelPosition",
-      "when": "terminalFocus"
-    },
+  {
+    // Command palette
+    "key": "cmd+h",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    // Toggle Panel
+    "key": "cmd+t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    // Maximize the panel
+    "key": "cmd+shift+enter",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    // Focus side bar from editor
+    "key": "cmd+e",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus"
+  },
+  {
+    // Focus editor
+    "key": "cmd+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "space",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "filesExplorer.openFilePreserveFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanelPosition",
+    "when": "panelFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "!panelFocus"
+  },
 ]
