@@ -3,25 +3,20 @@
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.local/share/nvim/plugged')
 
-"File explorer
-"Quick rename
-"MRU
-Plug 'scrooloose/nerdtree'
-Plug 'danro/rename.vim'
-Plug 'vim-scripts/mru.vim'
+Plug 'scrooloose/nerdtree' "File explorer
+Plug 'danro/rename.vim' "Quick rename
+Plug 'vim-scripts/mru.vim' "MRU
 
-"Camel/Snake case motion
-"Indent object
-"Surrondings
-"Comment toggle
-Plug 'chaoren/vim-wordmotion'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+Plug 'chaoren/vim-wordmotion' "Camel/Snake case motion
+Plug 'michaeljsmith/vim-indent-object' "Indent object
+Plug 'tpope/vim-surround' "Surrondings
+Plug 'tpope/vim-commentary' "Comment toggle
 
-"Colorscheme
-" Plug 'morhetz/gruvbox'
-Plug 'haishanh/night-owl.vim'
+Plug 'haishanh/night-owl.vim' "Colorscheme
+Plug 'ambv/black' "Black formatting
+Plug 'sheerun/vim-polyglot' "Languages support
+Plug 'editorconfig/editorconfig-vim' "EditorConfig support
+Plug 'w0rp/ale' "Linting
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -30,21 +25,6 @@ Plug 'vim-airline/vim-airline-themes'
 "FZF
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
-"Languages support
-Plug 'sheerun/vim-polyglot'
-
-"EditorConfig support
-"Linting
-Plug 'editorconfig/editorconfig-vim'
-Plug 'w0rp/ale'
-
-"Black formatting
-Plug 'ambv/black'
-
-"Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 "Completion
 Plug 'ncm2/ncm2'
@@ -64,20 +44,13 @@ let mapleader=" "
 let g:wordmotion_prefix = '<Leader>'
 let g:wordmotion_spaces = '_-'
 
-"Splits
 "Split on right and on below
-"More natural
-"Use :r and :b
 set splitright
 set splitbelow
 nnoremap <silent> <Leader>b :split<CR>
 nnoremap <silent> <Leader>r :vsplit<CR>
 
 "Search
-"Search as you type
-"Highlight results
-"Smart case
-"Use & to remove the highlight
 set incsearch
 set hlsearch
 set ignorecase
@@ -94,11 +67,7 @@ set wildignore+=*.so,*.o,*.swp
 set ttimeout
 set ttimeoutlen=50
 
-"Remap escape
-inoremap jj <Esc>
-
 "Remap page moves
-"Avoid scrolling one line by one line
 noremap <C-J> }
 noremap <C-K> {
 
@@ -106,9 +75,6 @@ noremap <C-K> {
 syntax on
 
 "Buffers integration
-"Buffers can be hidden but still alive
-"Limit buffer history for speed
-"Switch buffers by using ctrl+h/l
 set hidden
 set history=500
 nnoremap <silent> <C-H> :bprev<CR>
@@ -123,29 +89,54 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set list
-set listchars=tab:>-,trail:~
+"set listchars=tab:>-,trail:\u00b7
+let &listchars="tab:\u2192 ,extends:>,precedes:<,trail:~"
 
 "Remap save and quit
-nnoremap <silent> qq :x<CR>
+nnoremap <silent> Q :x<CR>
 
 "Show matching chars
 "Like () or {}
 set showmatch
 
 "Markdown syntax
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
 
-"Signcolumns
-"Avoid any unwanted background
+"Cleaner vertical split
+hi VertSplit ctermbg=NONE ctermfg=233
+
+"Ale signs
 set signcolumn=yes
 hi clear SignColumn
-
-"And set right Ale colors
 hi ALEErrorSign guibg=NONE guifg=red
 hi ALEWarningSign guibg=NONE guifg=orange
 
-"Cleaner vertical split
-hi VertSplit ctermbg=None ctermfg=233
+"Ale signs
+let g:ale_set_highlights=0
+let g:ale_sign_error='→ '
+let g:ale_sign_warning='→ '
+
+let g:ale_linters={
+      \'javascript': ['eslint'],
+      \'c': ['clang'],
+      \'cpp': ['clang'],
+      \'python': ['flake8'],
+      \}
+
+let g:ale_fixers = {
+    \'*': ['remove_trailing_lines', 'trim_whitespace'],
+    \'python': ['isort', 'black'],
+    \'elixir': ['mix_format'],
+    \}
+
+cnoreabbrev f ALEFix
+
+"Ale C/C++ linting
+let g:ale_c_clang_options='-Wall -Wextra -Wshadow --std=gnu11 -O0'
+let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
+
+"Override python.vim defaults
+let g:python_recommended_style=0
 
 "Hide the mode indicator as it is built in Airline
 "Hide command while typing
@@ -155,49 +146,7 @@ set noshowmode
 set noshowcmd
 set shortmess+=WI
 
-"Crystal
-let g:crystal_define_mappings=0
-let g:ale_crystal_ameba_executable='/usr/local/bin/ameba'
-
-"Ale signs
-let g:ale_set_highlights=0
-let g:ale_sign_error='→ '
-let g:ale_sign_warning='→ '
-
-"Linters to use
-"If nothing is precised, the default linters are used
-let g:ale_linters={
-      \'javascript': ['eslint'],
-      \'c': ['clang'],
-      \'cpp': ['clang'],
-      \'python': ['flake8'],
-      \}
-
-"Fixers to use
-let g:ale_fixers = {
-    \'*': ['remove_trailing_lines', 'trim_whitespace'],
-    \'python': ['isort', 'black'],
-    \'elixir': ['mix_format'],
-    \}
-cnoreabbrev f ALEFix
-
-"Ale C/C++ linting
-"Use basic flags
-"More specific flags should be provided on a project basis
-"by using a local .nvimrc at projet root re-exporting these variables
-let g:ale_c_clang_options='-Wall -Wextra -Wshadow --std=gnu11 -O0'
-let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++17 -O0'
-
-"Override python.vim defaults
-let g:python_recommended_style=0
-
 "Airline
-"Airline is the statusbar framework
-"Set a matching colorscheme
-"Do not use powerline
-"Disable Git tracking
-"Mode, Ale errors, Ale warnings, filename
-"syntax, file position
 let g:airline_theme='night_owl'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
@@ -208,7 +157,7 @@ let g:airline#extensions#default#layout=[
       \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled=0
-let g:airline_section_z=airline#section#create(['%l/%L'])
+let g:airline_section_z=airline#section#create(['%3l/%3L:%2c'])
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
@@ -223,13 +172,7 @@ let g:airline_symbols.linenr=''
 let g:airline_symbols.maxlinenr=''
 let g:airline_symbols.branch=''
 
-
 "FZF
-"FZF is the fuzzy finder
-"Define some shortcuts
-"Choose a layout
-"Get the good colors
-"Hide the statusline when in FZF
 noremap <silent> <leader>f :FZF <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
@@ -258,16 +201,10 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
 "The silver searcher
 nnoremap <silent> <Leader>h :Ag<CR>
 
 "Nerdtree
-"Ignore object and tmp ~files
 noremap <silent> <Leader>t :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"

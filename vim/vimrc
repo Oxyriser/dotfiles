@@ -1,19 +1,43 @@
+set termguicolors
+set shortmess+=WI
+
 "Remap leader
 let mapleader=" "
+
+"Split on right and on below
+set splitright
+set splitbelow
+nnoremap <silent> <Leader>b :split<CR>
+nnoremap <silent> <Leader>r :vsplit<CR>
+
+"Buffers integration
+set hidden
+set history=500
+nnoremap <silent> <C-H> :bprev<CR>
+nnoremap <silent> <C-L> :bnext<CR>
 
 "Search
 "Search as you type
 "Highlight results
 "Smart case
 "Use qq to remove the highlight
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
+set incsearch
+set hlsearch
 nnoremap <silent> & :nohl<CR>
 
-"Remap escape
-inoremap jj <Esc>
+"Identation
+filetype plugin indent on
+syntax enable
+set nosmartindent
+set cindent
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set list
+"set listchars=tab:>-,trail:\u00b7
+let &listchars="tab:\u2192 ,extends:>,precedes:<,trail:~"
 
 "Word for CamelCase words
 nnoremap <leader>w /\u<CR>:nohlsearch<CR>
@@ -24,10 +48,9 @@ noremap <C-J> }
 noremap <C-K> {
 
 "Remap save and quit
-nnoremap qq :x<CR>
+nnoremap Q :x<CR>
 
 "Show matching chars
-"Like () or {}
 set showmatch
 
 "Sort lines by lengh
@@ -38,4 +61,3 @@ function! SortLines() range
 endfunction
 
 command -range -nargs=0 Lsort :<line1>,<line2>call SortLines()
-
