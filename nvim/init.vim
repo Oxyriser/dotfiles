@@ -71,9 +71,6 @@ set ttimeoutlen=50
 noremap <C-J> }
 noremap <C-K> {
 
-"Syntax processing
-syntax on
-
 "Buffers integration
 set hidden
 set history=500

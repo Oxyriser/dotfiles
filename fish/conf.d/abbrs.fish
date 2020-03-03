@@ -12,6 +12,7 @@ if status --is-interactive
 
     ## GIT
     abbr -a -g g "git"
+    abbr -a -g gcl "git clone"
     abbr -a -g gd "git diff"
     abbr -a -g gds "git diff --stat"
     abbr -a -g gu "git pull"
@@ -26,6 +27,10 @@ if status --is-interactive
     abbr -a -g gp "git push"
     abbr -a -g gl "git log --name-status"
     abbr -a -g gt "git log --oneline --decorate --all --graph"
+
+    ## TIME
+    abbr -a -g hour "date +%T"
+    abbr -a -g today "date '+%A %d %B'"
 
     ## CLEAR
     abbr -a -g c "clear"
@@ -46,7 +51,8 @@ if status --is-interactive
     abbr -a -g mv "mv -v"
 
     ## MKDIR
-    abbr -a -g mmkdir "mkdir -p"
+    abbr -a -g mkd "mkdir -v"
+    abbr -a -g mmkd "mkdir -pv"
 
     ## PYTHON
     abbr -a -g py "python3"
@@ -68,8 +74,15 @@ if status --is-interactive
     abbr -a -g htmlpdf "wkhtmltopdf"
 
     ## LPASS
-    abbr -a -g passwdcopy "lpass show --password --clip"
+    abbr -a -g passcopy "lpass show --password --clip"
 
     ## FFSEND
     abbr -a -g upload "ffsend upload -c -e 4h"
+
+    ## PING
+    abbr -a -g internet "ping -c 5 8.8.8.8"
+
+    ## QALC
+    abbr -a -g q "qalc -t"
+    abbr -a -g solve "qalc -t solve"
 end
