@@ -1,59 +1,61 @@
 {
+  "window.titleBarStyle": "custom", // Otherwise the titlebar color is dictated by the OS
+  "window.zoomLevel": 0,
+
   "editor.fontFamily": "'JetBrains Mono', mononoki, 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
   "editor.fontSize": 18,
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.detectIndentation": false,
+  "editor.lightbulb.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.renderLineHighlight": "none",
+
   "terminal.integrated.fontSize": 16,
 
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "[python]": {
-    "files.insertFinalNewline": true
-  },
-
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 500,
   "explorer.confirmDelete": false,
-
-  "window.zoomLevel": 0,
-  "breadcrumbs.enabled": false, // Breadcrumb above editor
   "explorer.openEditors.visible": 0, // Show opened files
-  "window.titleBarStyle": "custom", // Otherwise the titlebar color is dictated by the OS
+
   "problems.showCurrentInStatus": true,
-  "editor.lightbulb.enabled": false,
-  "extensions.ignoreRecommendations": false,
+
   "workbench.colorTheme": "Night Owl+",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.color": "#fdd835",
   "workbench.activityBar.visible": false, // Left bar
   "workbench.statusBar.visible": true, // Bottom bar
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false, // Disable the preview on single click
-  "editor.suggestSelection": "first",
-  "editor.renderLineHighlight": "none",
+  "breadcrumbs.enabled": false, // Breadcrumb above editor
 
-  "files.exclude": { // Files are not show in the UI explorer
-    // Python stuff
+  "files.autoSave": "off",
+  "files.exclude": { // Files hidden in the UI explorer
+    // Python
     "**/__pycache__/": true,
     "**/*.pyc": true,
     "**/.mypy_cache/": true,
+
     // Jetbrains
     "**/.idea/": true,
+
     // Elm
     "**/elm-stuff/": true,
+
     // Haskell
     "**/.stack-work": true
   },
-
   "files.associations": {
     ".eslintrc": "jsonc",
     "*.prisma": "graphql"
   },
 
+  "html.mirrorCursorOnMatchingTag": false,
+
   "zenMode.hideLineNumbers": false,
   "zenMode.hideTabs": false,
-
-  "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.folders.theme": "specific",
-  "material-icon-theme.folders.color": "#fdd835",
 
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
@@ -66,7 +68,7 @@
     "editor.defaultFormatter": "ilyakooo0.ormolu"
   },
   "ghcSimple.maxCompletions": 4,
-  
+
   "go.useLanguageServer": false,
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
@@ -87,6 +89,8 @@
 
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
   "eslint.run": "onSave",
   "eslint.validate": [
     "javascript",
@@ -113,89 +117,186 @@
   "vim.useCtrlKeys": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": ["&"],
-      "commands": [":nohl"]
+      "before": [
+        "&"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["<leader>", "i"],
-      "after": ["i", " ", "<Esc>", "r"]
+      "before": [
+        "<leader>",
+        "i"
+      ],
+      "after": [
+        "i",
+        " ",
+        "<Esc>",
+        "r"
+      ]
     },
     {
-      "before": ["<leader>", "a"],
-      "after": ["a", " ", "<Esc>", "r"]
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "after": [
+        "a",
+        " ",
+        "<Esc>",
+        "r"
+      ]
     },
     {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.previousEditor"]
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
     },
     {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.nextEditor"]
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
     },
     {
-      "before": ["<C-j>"],
-      "after": ["}"]
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "}"
+      ]
     },
     {
-      "before": ["<C-k>"],
-      "after": ["{"]
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "{"
+      ]
     },
     {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
     },
     {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
     },
     {
-      "before": ["q", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
     },
     {
-      "before": ["<C-f>"],
-      "commands": ["editor.action.formatDocument"]
+      "before": [
+        "<C-f>"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
     },
     {
-      "before": ["<leader>", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
+      "before": [
+        "<leader>",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleZenMode"
+      ]
     },
     {
-      "before": ["<leader>", "r"],
-      "commands": ["workbench.action.splitEditorRight"]
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.splitEditorRight"
+      ]
     },
     {
-      "before": ["<leader>", "b"],
-      "commands": ["workbench.action.splitEditorDown"]
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
     },
     {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
     },
     {
-      "before": ["<C-f>"],
-      "commands": ["editor.action.formatSelection"]
+      "before": [
+        "<C-f>"
+      ],
+      "commands": [
+        "editor.action.formatSelection"
+      ]
     },
     // Don't overwrite the clipboard with what is being overwritten
     {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     }
   ],
 }
