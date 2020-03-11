@@ -10,6 +10,7 @@ set -l orange '#ffb86c'
 set -l yellow '#f1fa8c'
 
 set -x FZF_DEFAULT_OPTS "
+  --height 40% --reverse
   --color=bg+:$colorbg,bg:$colorbg,spinner:$purple,hl:$purple
   --color=fg:$colorfg,header:$colorfg,info:$yellow,pointer:$purple
   --color=marker:$purple,fg+:$purple,prompt:$yellow,hl+:$green
