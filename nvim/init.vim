@@ -156,7 +156,7 @@ let g:airline#extensions#default#layout=[
       \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled=0
-let g:airline_section_z=airline#section#create(['%3l/%3L:%2c'])
+let g:airline_section_z=airline#section#create(['%3l/%L:%-2c'])
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
