@@ -18,3 +18,6 @@
   editor = nvim
 [web]
   browser = google-chrome
+[alias]
+code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rn | head -n 15"
+cc = "!git code-changes"
