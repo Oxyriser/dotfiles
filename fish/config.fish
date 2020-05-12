@@ -12,6 +12,7 @@ end
 function fish_user_key_bindings
   # Get the vi key bindings
   fish_vi_key_bindings
+  bind -M insert \et transpose-words
 
   # Get the default FZF functions and bindings
   fzf_key_bindings
@@ -20,9 +21,9 @@ function fish_user_key_bindings
   bind -M insert -e \cr
   bind -M insert \ch fzf-history-widget
   bind -M insert -e \ct
-  bind -M insert \cj fzf-file-widget
+  bind -M insert \cf fzf-file-widget
   bind -M insert -e \ec
-  bind -M insert \ck fzf-cd-widget
+  bind -M insert \co fzf-cd-widget
 end
 
 # Locales
@@ -56,4 +57,3 @@ end
 
 # VirtualFish
 set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
-eval (python -m virtualfish)
