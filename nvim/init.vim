@@ -13,7 +13,6 @@ Plug 'tpope/vim-surround' "Surrondings
 Plug 'tpope/vim-commentary' "Comment toggle
 
 Plug 'haishanh/night-owl.vim' "Colorscheme
-Plug 'ambv/black' "Black formatting
 Plug 'sheerun/vim-polyglot' "Languages support
 Plug 'editorconfig/editorconfig-vim' "EditorConfig support
 Plug 'w0rp/ale' "Linting
@@ -208,9 +207,6 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\.pyc$', '__pycache__']
 let NERDTreeStatusline=""
-
-"Black
-let g:black_virtualenv="~/.virtualenvs/black.vim"
 
 "Run python file
 autocmd FileType python nnoremap <buffer> <F10> :w <CR> :exec '!python3' shellescape(@%, 1)<CR>
