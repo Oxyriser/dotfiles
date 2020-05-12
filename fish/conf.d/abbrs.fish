@@ -1,88 +1,97 @@
 if status --is-interactive
+    function __my_abbr_add
+        set -g "_fish_abbr_$argv[1]" "$argv[2..-1]"
+    end
+
     ## NVIM
-    abbr -a -g e "nvim"
-    abbr -a -g v "nvim -R"
+    __my_abbr_add e "nvim"
+    __my_abbr_add v "nvim -R"
 
     ## EXA
-    abbr -a -g ls "exa"
-    abbr -a -g l "exa -l"
-    abbr -a -g la "exa -la"
-    abbr -a -g t "exa --tree"
-    abbr -a -g t2 "exa --tree --level 2"
+    __my_abbr_add ls "exa"
+    __my_abbr_add l "exa -l"
+    __my_abbr_add la "exa -la"
+    __my_abbr_add t "exa --tree"
+    __my_abbr_add t2 "exa --tree --level 2"
 
     ## GIT
-    abbr -a -g g "git"
-    abbr -a -g gcl "git clone"
-    abbr -a -g gd "git diff"
-    abbr -a -g gds "git diff --stat"
-    abbr -a -g gu "git pull"
-    abbr -a -g gst "git status"
-    abbr -a -g gsw "git switch"
-    abbr -a -g grs "git restore"
-    abbr -a -g ga "git add"
-    abbr -a -g gaa "git add --all"
-    abbr -a -g gc "git commit"
-    abbr -a -g gcm "git commit -m"
-    abbr -a -g gamend "git commit --all --amend --no-edit"
-    abbr -a -g gp "git push"
-    abbr -a -g gl "git log --name-status"
-    abbr -a -g gt "git log --oneline --decorate --all --graph"
+    __my_abbr_add g "git"
+    __my_abbr_add gcl "git clone"
+    __my_abbr_add gd "git diff"
+    __my_abbr_add gds "git diff --stat"
+    __my_abbr_add gu "git pull"
+    __my_abbr_add gst "git status"
+    __my_abbr_add gsw "git switch"
+    __my_abbr_add grs "git restore"
+    __my_abbr_add ga "git add"
+    __my_abbr_add gaa "git add --all"
+    __my_abbr_add gc "git commit"
+    __my_abbr_add gcm "git commit -m"
+    __my_abbr_add gamend "git commit --all --amend --no-edit"
+    __my_abbr_add gp "git push"
+    __my_abbr_add gl "git log --name-status"
+    __my_abbr_add gt "git log --oneline --decorate --all --graph"
 
     ## TIME
-    abbr -a -g hour "date +%T"
-    abbr -a -g today "date '+%A %d %B'"
+    __my_abbr_add hour "date +%T"
+    __my_abbr_add today "date '+%A %d %B'"
 
     ## CLEAR
-    abbr -a -g c "clear"
+    __my_abbr_add c "clear"
 
     ## DU
-    abbr -a -g du "du -sh"
-    abbr -a -g ddu "du -h"
+    __my_abbr_add du "du -sh"
+    __my_abbr_add ddu "du -h"
 
     ## RM
-    abbr -a -g rrm "rm -Rf"
-    abbr -a -g rmd "rmdir"
+    __my_abbr_add rrm "rm -Rf"
+    __my_abbr_add rmd "rmdir"
 
     ## CP
-    abbr -a -g cp "cp -v"
-    abbr -a -g ccp "cp -R"
+    __my_abbr_add cp "cp -v"
+    __my_abbr_add ccp "cp -R"
 
     ## MV
-    abbr -a -g mv "mv -v"
+    __my_abbr_add mv "mv -v"
 
     ## MKDIR
-    abbr -a -g mkd "mkdir -v"
-    abbr -a -g mmkd "mkdir -pv"
+    __my_abbr_add mkd "mkdir -v"
+    __my_abbr_add mmkd "mkdir -pv"
 
     ## PYTHON
-    abbr -a -g py "python3"
+    __my_abbr_add py "python3"
+    __my_abbr_add pip "pip3"
+
+    ## VIRTUALFISH
+    __my_abbr_add vfd "vf deactivate"
+    __my_abbr_add vfa "vf activate"
 
     ## CHMOD
-    abbr -a -g cx "chmod +x"
+    __my_abbr_add cx "chmod +x"
 
     ## DOCKER
-    abbr -a -g d "docker"
-    abbr -a -g dc "docker-compose"
+    __my_abbr_add d "docker"
+    __my_abbr_add dc "docker-compose"
 
     ## BAT
-    abbr -a -g cat "bat"
+    __my_abbr_add cat "bat"
+    __my_abbr_add catdiff "bat --diff"
 
     ## CD
-    abbr -a -g ... "cd ../.."
+    __my_abbr_add _2E_2E_2E_ "cd ../.." # ...
 
     ## WKHTMLTOPDF
-    abbr -a -g htmlpdf "wkhtmltopdf"
+    __my_abbr_add htmlpdf "wkhtmltopdf"
 
     ## LPASS
-    abbr -a -g passcopy "lpass show --password --clip"
+    __my_abbr_add passcopy "lpass show --password --clip"
 
     ## FFSEND
-    abbr -a -g upload "ffsend upload -c -e 4h"
+    __my_abbr_add upload "ffsend upload -c -e 4h"
 
     ## PING
-    abbr -a -g internet "ping -c 5 8.8.8.8"
+    __my_abbr_add internet "ping -c 5 8.8.8.8"
 
     ## QALC
-    abbr -a -g q "qalc -t"
-    abbr -a -g solve "qalc -t solve"
+    __my_abbr_add q "qalc -t"
 end
