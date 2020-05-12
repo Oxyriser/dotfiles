@@ -56,6 +56,9 @@ set ignorecase
 set smartcase
 nnoremap <silent> & :nohl<CR>
 
+"Allow to move cursor freely
+set virtualedit=all
+
 "Avoid useless redraw
 set lazyredraw
 
