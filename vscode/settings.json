@@ -30,6 +30,8 @@
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false, // Disable the preview on single click
   "breadcrumbs.enabled": false, // Breadcrumb above editor
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 24,
 
   "files.autoSave": "off",
   "files.exclude": { // Files hidden in the UI explorer
@@ -69,7 +71,7 @@
   },
   "ghcSimple.maxCompletions": 4,
 
-  "go.useLanguageServer": false,
+  "go.useLanguageServer": true,
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
     "-Egolint",
@@ -299,4 +301,5 @@
       ]
     }
   ],
+  "explorer.confirmDragAndDrop": false,
 }
