@@ -1,23 +1,32 @@
 [user]
-  name = Theo Danneels
-  email = danneels.theo@gmail.com
-[push]
-  default = current
-[merge]
-  tool = nvim
-  conflictstyle = diff3
-[mergetool]
-  prompt = false
-[mergetool "nvim"]
-  cmd = nvim -f -c Gdiff $MERGED
-[diff]
-  tool = nvim
-[difftool]
-  prompt = false
+    name = Theo Danneels
+    email = danneels.theo@gmail.com
+
 [core]
-  editor = nvim
-[web]
-  browser = google-chrome
+    editor = nvim
+
+[push]
+    default = current
+
+[merge]
+    tool = nvim
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[mergetool "nvim"]
+    # $MERGED underneath: -c '$wincmd w' -c 'wincmd J'
+    cmd = nvim -d $LOCAL $MERGED $REMOTE -c 'wincmd l'
+
+[diff]
+    tool = nvim
+    algorithm = histogram
+
+[difftool]
+    prompt = false
+
 [alias]
-code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rn | head -n 15"
-cc = "!git code-changes"
+    code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rn | head -n 15"
+
+    cc = "!git code-changes"
