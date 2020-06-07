@@ -126,6 +126,7 @@ let g:ale_fixers = {
     \'*': ['remove_trailing_lines', 'trim_whitespace'],
     \'python': ['isort', 'black'],
     \'elixir': ['mix_format'],
+    \'go': ['gofmt', 'goimports'],
     \}
 
 cnoreabbrev f ALEFix
