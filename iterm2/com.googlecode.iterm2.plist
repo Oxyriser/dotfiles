@@ -20,6 +20,8 @@
 	<string>manual</string>
 	<key>BadgeRightMargin</key>
 	<integer>10</integer>
+	<key>CGFontRenderingFontSmoothingDisabled</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>Command</key>
@@ -1846,7 +1848,7 @@ Paste Special.Paste Selection</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>370 191 700 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>155 93 920 533 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 70 570 452 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -2637,7 +2639,7 @@ Paste Special.Paste Selection</string>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -3469,14 +3471,20 @@ Paste Special.Paste Selection</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7beta4</string>
-		<string>3.3.7beta3</string>
-		<string>3.3.8beta5</string>
-		<string>3.3.7beta2</string>
-		<string>3.3.8beta4</string>
+		<string>3.3.10beta2</string>
 		<string>3.3.8beta3</string>
+		<string>3.3.10beta4</string>
+		<string>3.3.8beta5</string>
+		<string>3.3.7beta3</string>
 		<string>3.3.8beta2</string>
+		<string>3.3.8beta4</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.9beta1</string>
+		<string>3.3.10beta1</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.11beta1</string>
 		<string>3.3.8beta1</string>
+		<string>3.3.10beta3</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -3484,6 +3492,7 @@ Paste Special.Paste Selection</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Hermit</string>
 		<string>JetBrains Mono</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
@@ -3509,7 +3518,7 @@ Paste Special.Paste Selection</string>
 	<key>NoSyncLastTipTime</key>
 	<real>598022224.49078095</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>190</integer>
+	<integer>345</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3850,6 +3859,14 @@ Paste Special.Paste Selection</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>frame</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -4051,11 +4068,11 @@ Paste Special.Paste Selection</string>
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>tmuxWindow</string>
 				<key>nonterminalContext</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4126,6 +4143,14 @@ Paste Special.Paste Selection</string>
 				<true/>
 				<key>name</key>
 				<string>iterm2.localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4277,17 +4302,17 @@ Paste Special.Paste Selection</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>tmuxWindow</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -4376,9 +4401,11 @@ Paste Special.Paste Selection</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-22T00:08:24Z</date>
+	<date>2020-06-12T21:06:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>2383427759</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
@@ -7015,7 +7042,7 @@ Paste Special.Paste Selection</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8beta5</string>
+	<string>3.3.11beta1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
