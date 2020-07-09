@@ -1,12 +1,31 @@
-[user]
-    name = Theo Danneels
-    email = danneels.theo@gmail.com
+[alias]
+    aliases = "!git config -l | grep ^alias | cut -c 7- | sort"
+
+    append = commit --amend --no-edit
+
+
+    code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rn | head -n 15"
+
+    cc = "!git code-changes"
+
+    incoming = log ..@{u}
+
+    outgoing = log @{u}..
+
+    tree = log --all --decorate --graph --oneline --graph
+
+    undopush = push --force origin HEAD^:master
 
 [core]
     editor = nvim
+    pager = delta
 
-[push]
-    default = current
+[diff]
+    tool = nvim
+    algorithm = histogram
+
+[difftool]
+    prompt = false
 
 [merge]
     tool = nvim
@@ -19,14 +38,16 @@
     # $MERGED underneath: -c '$wincmd w' -c 'wincmd J'
     cmd = nvim -d $LOCAL $MERGED $REMOTE -c 'wincmd l'
 
-[diff]
-    tool = nvim
-    algorithm = histogram
+[push]
+    default = current
 
-[difftool]
-    prompt = false
+[rebase]
+    autoStash = true
 
-[alias]
-    code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rn | head -n 15"
+[user]
+    name = Theo Danneels
+    email = danneels.theo@gmail.com
 
-    cc = "!git code-changes"
+[web]
+    browser = firefox
+
