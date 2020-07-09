@@ -1,5 +1,7 @@
 if status --is-interactive
     function __my_abbr_add
+        # When the abbreviation is not alphanumeric,
+        # use `string escape --style=var <abbr>`
         set -g "_fish_abbr_$argv[1]" "$argv[2..-1]"
     end
 
@@ -16,21 +18,20 @@ if status --is-interactive
 
     ## GIT
     __my_abbr_add g "git"
-    __my_abbr_add gcl "git clone"
-    __my_abbr_add gd "git diff"
-    __my_abbr_add gds "git diff --stat"
-    __my_abbr_add gu "git pull"
-    __my_abbr_add gst "git status"
-    __my_abbr_add gsw "git switch"
-    __my_abbr_add grs "git restore"
     __my_abbr_add ga "git add"
     __my_abbr_add gaa "git add --all"
+    __my_abbr_add gcl "git clone"
     __my_abbr_add gc "git commit"
-    __my_abbr_add gcm "git commit -m"
-    __my_abbr_add gamend "git commit --all --amend --no-edit"
-    __my_abbr_add gp "git push"
+    __my_abbr_add gd "git diff"
+    __my_abbr_add gds "git diff --stat"
+    __my_abbr_add gda "git diff --cached"
     __my_abbr_add gl "git log --name-status"
-    __my_abbr_add gt "git log --oneline --decorate --all --graph"
+    __my_abbr_add gp "git push"
+    __my_abbr_add grs "git restore"
+    __my_abbr_add gst "git status --short"
+    __my_abbr_add gsw "git switch"
+    __my_abbr_add gt "git tree"
+    __my_abbr_add gu "git pull"
 
     ## TIME
     __my_abbr_add hour "date +%T"
