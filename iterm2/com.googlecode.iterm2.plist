@@ -1793,13 +1793,15 @@ Paste Special.Paste Selection</string>
 	<key>MinimalTabStyleTreatLeftInsetAsPartOfFirstTab</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Desktop</string>
+	<string>~/Documents</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
+	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
+	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1842,7 +1844,7 @@ Paste Special.Paste Selection</string>
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>495 536 347 181 0 0 1440 877 </string>
+	<string>546 522 347 181 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>440 265 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2663,7 +2665,7 @@ Paste Special.Paste Selection</string>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>15</integer>
 			<key>Working Directory</key>
 			<string>/Users/theo</string>
 		</dict>
@@ -3471,20 +3473,24 @@ Paste Special.Paste Selection</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.10beta2</string>
+		<string>3.3.7beta4</string>
 		<string>3.3.8beta3</string>
 		<string>3.3.10beta4</string>
+		<string>3.3.12beta3</string>
 		<string>3.3.8beta5</string>
+		<string>3.3.8beta1</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.10beta3</string>
+		<string>3.4.0beta2</string>
 		<string>3.3.8beta2</string>
 		<string>3.3.8beta4</string>
 		<string>3.3.7beta2</string>
 		<string>3.3.9beta1</string>
 		<string>3.3.10beta1</string>
-		<string>3.3.7beta4</string>
 		<string>3.3.11beta1</string>
-		<string>3.3.8beta1</string>
-		<string>3.3.10beta3</string>
+		<string>3.3.10beta2</string>
+		<string>3.4.0beta1</string>
+		<string>3.3.12beta2</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -3515,10 +3521,12 @@ Paste Special.Paste Selection</string>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>F67268AE-EEDC-423F-B561-ABC79C6C4856</string>
+	<key>NoSyncLastOSVersion</key>
+	<string>Version 10.15.6 (Build 19G73)</string>
 	<key>NoSyncLastTipTime</key>
 	<real>598022224.49078095</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>345</integer>
+	<integer>400</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3640,6 +3648,14 @@ Paste Special.Paste Selection</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selectionLength</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3651,6 +3667,14 @@ Paste Special.Paste Selection</string>
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>parentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3769,6 +3793,14 @@ Paste Special.Paste Selection</string>
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>selection</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4068,11 +4100,11 @@ Paste Special.Paste Selection</string>
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>tmuxWindow</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4294,6 +4326,14 @@ Paste Special.Paste Selection</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindow</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.pid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -4305,14 +4345,6 @@ Paste Special.Paste Selection</string>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -4343,6 +4375,10 @@ Paste Special.Paste Selection</string>
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncRestoreWindowsCount</key>
+	<integer>0</integer>
+	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
+	<true/>
 	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
 	<dict>
 		<key>Initial Directory</key>
@@ -4397,15 +4433,15 @@ Paste Special.Paste Selection</string>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=33</string>
+	<string>https://iterm2.com/appcasts/testing_modern.xml?shard=33</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-12T21:06:26Z</date>
+	<date>2020-07-27T15:04:05Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2383427759</integer>
+	<integer>3792533637</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
@@ -7042,7 +7078,7 @@ Paste Special.Paste Selection</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.11beta1</string>
+	<string>3.4.0beta2</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
