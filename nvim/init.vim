@@ -127,6 +127,7 @@ let g:ale_fixers = {
     \'python': ['isort', 'black'],
     \'elixir': ['mix_format'],
     \'go': ['gofmt', 'goimports'],
+    \'haskell': ['ormolu'],
     \}
 
 cnoreabbrev f ALEFix
