@@ -80,6 +80,7 @@ if status --is-interactive
 
     ## CD
     __my_abbr_add _2E_2E_2E_ "cd ../.." # ...
+    __my_abbr_add _3A_q "cd .." # :q
 
     ## WKHTMLTOPDF
     __my_abbr_add htmlpdf "wkhtmltopdf"
