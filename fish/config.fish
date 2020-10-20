@@ -27,7 +27,7 @@ function fish_user_key_bindings
 end
 
 # Locales
-set -gx LC_ALL fr_FR.UTF-8
+set -gx LANG fr_FR.UTF-8
 
 # Default editor is nvim
 set -gx EDITOR nvim
@@ -41,19 +41,16 @@ set -gx LESS_TERMCAP_se (set_color normal)
 set -gx LESS_TERMCAP_us (set_color green)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
-# Java
-set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home"
-
 # Go
-set -gx GOPATH $HOME/Documents/go
-
-# Brew
-set -gx HOMEBREW_INSTALL_BADGE "✅" 
+set -gx GOPATH $HOME/go
 
 # PATH
 if not set -q fish_user_paths
-    set -U fish_user_paths "$GOPATH/bin" "$HOME/.cargo/bin" "$HOME/.local/bin" "$HOME/.fnm/current/bin"
-end
+    set -U fish_user_paths "$HOME/.poetry/bin" \
+                           "$HOME/.fnm/" \
+                           "$HOME/.fnm/aliases/default/bin" \
+                           "$HOME/.cargo/bin" \
+                           "$GOPATH/bin" \
+                           "$HOME/.local/bin" \
 
-# VirtualFish
-set -g VIRTUALFISH_DEFAULT_PYTHON "python3"
+end
