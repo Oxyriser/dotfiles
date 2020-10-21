@@ -42,7 +42,7 @@ set -gx LESS_TERMCAP_us (set_color green)
 set -gx LESS_TERMCAP_ue (set_color normal)
 
 # Go
-set -gx GOPATH $HOME/go
+set -gx GOPATH $HOME/.go
 
 # PATH
 if not set -q fish_user_paths

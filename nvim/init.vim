@@ -12,7 +12,8 @@ Plug 'michaeljsmith/vim-indent-object' "Indent object
 Plug 'tpope/vim-surround' "Surrondings
 Plug 'tpope/vim-commentary' "Comment toggle
 
-Plug 'haishanh/night-owl.vim' "Colorscheme
+" Plug 'haishanh/night-owl.vim' "Colorscheme
+Plug 'morhetz/gruvbox' "Colorscheme
 Plug 'sheerun/vim-polyglot' "Languages support
 Plug 'editorconfig/editorconfig-vim' "EditorConfig support
 Plug 'w0rp/ale' "Linting
@@ -34,7 +35,9 @@ call plug#end()
 
 "Colors
 set termguicolors
-colorscheme night-owl
+" colorscheme night-owl
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
 
 "Remap leader
 let mapleader=" "
@@ -164,8 +167,8 @@ let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
 let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#ale#error_symbol='✗ '
-let g:airline#extensions#ale#warning_symbol='✝ '
+let g:airline#extensions#ale#error_symbol='! '
+let g:airline#extensions#ale#warning_symbol='? '
 let g:airline#extensions#ale#show_line_numbers=0
 let g:airline#extensions#tagbar#enabled=0
 let g:airline_symbols.readonly='🔒'
