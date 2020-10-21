@@ -5,6 +5,9 @@ if status --is-interactive
         set -g "_fish_abbr_$argv[1]" "$argv[2..-1]"
     end
 
+    ## CLIP.EXE
+    __my_abbr_add pbcopy "clip.exe"
+
     ## NVIM
     __my_abbr_add e "nvim"
     __my_abbr_add v "nvim -R"
