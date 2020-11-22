@@ -1,0 +1,327 @@
+call plug#begin('~/.vim/plugged')
+  "Theme
+  Plug 'lifepillar/vim-gruvbox8'
+  Plug 'shinchu/lightline-gruvbox.vim'
+  Plug 'itchyny/lightline.vim'
+  Plug 'mhinz/vim-startify'
+
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'sheerun/vim-polyglot'
+
+  Plug 'tmux-plugins/vim-tmux-focus-events'
+
+  Plug 'editorconfig/editorconfig-vim'
+
+  "Motions
+  Plug 'easymotion/vim-easymotion'
+  Plug 'michaeljsmith/vim-indent-object'
+  Plug 'chaoren/vim-wordmotion'
+
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+
+  Plug 'airblade/vim-gitgutter'
+  Plug 'zivyangll/git-blame.vim'
+
+  Plug 'tpope/vim-commentary'
+
+  Plug 'markonm/traces.vim'
+call plug#end()
+
+syntax on
+filetype plugin indent on
+set autoindent
+
+"Enable true colors
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+set background=dark
+colorscheme gruvbox8_hard
+
+highlight clear SignColumn "Transparent gutter
+set signcolumn=yes "Always show the gutter
+
+highlight ErrorMsg guifg=Red guibg=NONE
+
+set nowrap "Let long lines go off screen
+set sidescroll=1 "Numer of columns to scroll horizontally
+set scrolloff=5 "Keep lines around the cursor
+set sidescrolloff=5
+
+set shortmess=atToOcF "Short messages format
+set formatoptions=tcrqj "Automatic formating
+
+set expandtab
+set smarttab "Delete leading spaces as a tab
+set tabstop=4 "Width of tab character
+set softtabstop=4 "Spaces inserted when tab is pressed
+set shiftwidth=4 "Automatic indentation
+set shiftround "Round indent to multiple of shiftwidth
+set list
+let &listchars="tab:| ,extends:>,precedes:<,trail:\u00b7,nbsp:\u00b7"
+
+set nostartofline "Always keep the cursor in the same column when moving
+
+set nrformats=bin,hex "<c-a>/<c-x>
+
+"Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+
+"Keycode timeout
+set ttimeout
+set ttimeoutlen=50
+
+"Fast terminal
+set ttyfast
+set lazyredraw
+
+set history=5000  "Number of lines remembered
+set tabpagemax=50
+set updatetime=500 "Fire CursorHold more often
+
+set autoread "Detect changes outside of vim
+
+"Hide default statusline information
+set laststatus=2 "Always show the statusline
+set noshowmode
+set noshowcmd
+set noruler
+
+set backspace=indent,eol,start
+set belloff=all
+set langnoremap
+
+"Better command autocompletion
+set wildmenu
+set wildmode=longest:full,full
+
+"Search
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+set virtualedit=all "Free roaming cursor
+set display=lastline "Show overfitting last line
+
+"Persisten undo
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
+"Swap files' directory
+if !isdirectory($HOME . "/.vim/swap")
+    call mkdir($HOME . "/.vim/swap", "", 0700)
+endif
+set directory=~/.vim/swap
+
+set hidden "Allow for multiple unsaved buffers
+
+let mapleader=" "
+
+"Move to next/previous paragraph
+nnoremap <silent> <c-k> {
+xnoremap <silent> <c-k> {
+onoremap <silent> <c-k> {
+nnoremap <silent> <c-j> }
+xnoremap <silent> <c-j> }
+onoremap <silent> <c-j> }
+
+nnoremap <silent> <leader>q :quit<cr>
+nnoremap <silent> <leader>u :update<cr>
+
+"Split mappings
+nnoremap <silent> <leader>s :vsplit<cr>
+nnoremap <silent> <leader>S :split<cr>
+
+"Buffer mappings
+nnoremap <silent> <c-h> :bprev<cr>
+nnoremap <silent> <c-l> :bnext<cr>
+nnoremap <silent> <leader>d :bdelete<cr>
+
+"Quickly remove highlighting
+nnoremap <silent> & :nohlsearch<cr>
+
+"Toggle line number (on by default)
+nnoremap <silent> <leader>n :set number!<cr>
+set number
+
+"QuickFix
+nnoremap <silent> <c-q>j :cn<cr>
+nnoremap <silent> <c-q>k :cp<cr>
+nnoremap <silent> <c-q>o :copen<cr>
+nnoremap <silent> <c-q>q :ccl<cr>
+
+"Sort lines by lengh
+function! s:SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth(submatch(0)) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort! n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
+command -range -nargs=0 Lsort :<line1>,<line2>call <SID>SortLines()
+
+"WordMotion
+let g:wordmotion_prefix = '<leader>'
+let g:wordmotion_spaces = ['_', '-', '.']
+
+"FZF
+nnoremap <silent> <c-f>f :Files<cr>
+nnoremap <silent> <c-f>a :Ag<cr>
+nnoremap <silent> <c-f>A :AgFiles<cr>
+nnoremap <silent> <c-f>b :Buffers<cr>
+nnoremap <silent> <c-f>g :GFiles?<cr>
+nnoremap <silent> <c-f>l :Lines<cr>
+nnoremap <silent> <c-f>L :BLines<cr>
+nnoremap <silent> <c-f>m :Marks<cr>
+nnoremap <silent> <c-f>w :Windows<cr>
+nnoremap <silent> <c-f>: :History:<cr>
+nnoremap <silent> <c-f>/ :History/<cr>
+nnoremap <silent> <c-f>c :Commands<cr>
+
+let g:fzf_preview_window = [] "Disable fzf preview window
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'border': 'sharp' } }
+let g:fzf_colors =
+	\{
+	\  'fg':      ['fg', 'Normal'],
+	\  'bg':      ['bg', 'Normal'],
+	\  'hl':      ['fg', 'Comment'],
+	\  'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+	\  'bg+':     ['bg', 'Normal', 'CursorColumn'],
+	\  'hl+':     ['fg', 'Statement'],
+	\  'info':    ['fg', 'PreProc'],
+	\  'border':  ['fg', 'Ignore'],
+	\  'prompt':  ['fg', 'Conditional'],
+	\  'pointer': ['fg', 'Exception'],
+	\  'marker':  ['fg', 'Keyword'],
+	\  'spinner': ['fg', 'Label'],
+	\  'header':  ['fg', 'Comment']
+	\}
+
+command! -bang -nargs=* AgFiles
+  \ call fzf#vim#grep(
+  \   'ag -l -- '.shellescape(<q-args>), 1,
+  \   {}, <bang>0)
+
+"Lightline
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ]
+      \           , [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo'], [], [ 'filetype' ] ],
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename' ] ],
+      \   'right': [ [ 'lineinfo'] ],
+      \ },
+      \ 'component': {
+      \   'lineinfo': '%3l/%L:%-2c%<',
+      \ },
+      \ 'component_function': {
+      \  'cocstatus': 'coc#status',
+      \ },
+      \ }
+autocmd User CocStatusChange, CocDiagnosticChange call lightline#update
+
+"Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 0
+let g:netrw_winsize = 15
+nnoremap <silent> <leader>t :Lexplore<cr>
+
+"COC
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-python']
+
+command! -nargs=0 Fold :call CocAction('fold')
+nnoremap <silent> <leader>z :call CocAction('fold')<cr>
+
+cnoreabbrev ccmd CocCommand
+cnoreabbrev cls CocList
+cnoreabbrev cconf CocConfig
+cnoreabbrev cdiag CocDiagnostics
+
+"Go to prev/next error
+nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
+
+" Go to code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references-used)
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+nnoremap <silent> gh :call <SID>show_documentation()<cr>
+
+"Format Selection
+xmap <leader>f  <Plug>(coc-format-selected):update<cr>
+nmap <leader>f  <Plug>(coc-format):update<cr>
+
+"Apply AutoFix to problem on the current line.
+nmap <leader>af  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+"EasyMotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_do_mapping = 0
+nmap <silent> ù <Plug>(easymotion-overwin-f2)
+
+"Startify
+function! s:gitModified()
+    let files = systemlist('git ls-files -m 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+function! s:gitUntracked()
+    let files = systemlist('git ls-files -o --exclude-standard
+    2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+let g:startify_lists = [
+            \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
+            \ { 'type': function('s:gitModified'), 'header': ['   Git modified']},
+            \ { 'type': function('s:gitUntracked'), 'header': ['   Git untracked']},
+            \ { 'type': 'commands', 'header': ['   Commands'] },
+            \ ]
+
+let g:startify_custom_header = startify#center([
+            \ '                             ',
+            \ '          __                 ',
+            \ '  __  __ /\_\    ___ ___     ',
+            \ ' /\ \/\ \\/\ \  / __` __`\   ',
+            \ ' \ \ \_/ |\ \ \/\ \/\ \/\ \  ',
+            \ '  \ \___/  \ \_\ \_\ \_\ \_\ ',
+            \ '   \/__/    \/_/\/_/\/_/\/_/ ',
+            \ ])
+
+let g:startify_bookmarks = [ '~/.vimrc' ]
+
+"Git Blame
+nnoremap <leader>g :GitBlame<cr>

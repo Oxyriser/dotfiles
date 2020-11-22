@@ -9,15 +9,15 @@ if status --is-interactive
     __my_abbr_add pbcopy "clip.exe"
 
     ## NVIM
-    __my_abbr_add e "nvim"
-    __my_abbr_add v "nvim -R"
+    __my_abbr_add e "vim"
+    __my_abbr_add v "view"
 
     ## EXA
     __my_abbr_add ls "exa"
     __my_abbr_add l "exa -l"
     __my_abbr_add la "exa -la"
     __my_abbr_add t "exa --tree"
-    __my_abbr_add t2 "exa --tree --level 2"
+    __my_abbr_add st "exa --tree --level 2"
 
     ## GIT
     __my_abbr_add g "git"
@@ -27,7 +27,7 @@ if status --is-interactive
     __my_abbr_add gc "git commit"
     __my_abbr_add gd "git diff"
     __my_abbr_add gds "git diff --stat"
-    __my_abbr_add gda "git diff --cached"
+    __my_abbr_add gdc "git diff --cached"
     __my_abbr_add gl "git log --name-status"
     __my_abbr_add gp "git push"
     __my_abbr_add grs "git restore"
@@ -35,6 +35,7 @@ if status --is-interactive
     __my_abbr_add gsw "git switch"
     __my_abbr_add gt "git tree"
     __my_abbr_add gu "git pull"
+    __my_abbr_add groot "cd (git_repository_root)"
 
     ## TIME
     __my_abbr_add hour "date +%T"

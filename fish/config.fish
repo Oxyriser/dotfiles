@@ -10,27 +10,30 @@ end
 
 # Bindings
 function fish_user_key_bindings
-  # Get the vi key bindings
-  fish_vi_key_bindings
-  bind -M insert \et transpose-words
-
-  # Get the default FZF functions and bindings
-  fzf_key_bindings
-
   # FZF bindings
+  fzf_key_bindings
   bind -M insert -e \cr
   bind -M insert \ch fzf-history-widget
   bind -M insert -e \ct
   bind -M insert \cf fzf-file-widget
   bind -M insert -e \ec
   bind -M insert \co fzf-cd-widget
+
+  # VI bindings
+  fish_vi_key_bindings
+  bind u history-token-search-backward
+  bind \cr history-token-search-forward
+
+  for mode in default insert visual
+    bind -M $mode \en __my_prepend_nvim
+  end
 end
 
 # Locales
 set -gx LANG fr_FR.UTF-8
 
-# Default editor is nvim
-set -gx EDITOR nvim
+# Default editor is vim
+set -gx EDITOR vim
 
 # Less
 set -gx LESS_TERMCAP_mb (set_color -o red)
@@ -48,9 +51,14 @@ set -gx GOPATH $HOME/.go
 if not set -q fish_user_paths
     set -U fish_user_paths "$HOME/.poetry/bin" \
                            "$HOME/.fnm/" \
-                           "$HOME/.fnm/aliases/default/bin" \
+                           "$HOME/.fnm/current/bin" \
                            "$HOME/.cargo/bin" \
                            "$GOPATH/bin" \
                            "$HOME/.local/bin" \
 
+end
+
+# TMUX
+if set -q TMUX
+  set -x TERM tmux-256color
 end
