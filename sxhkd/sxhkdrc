@@ -1,0 +1,51 @@
+# Volume
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer set Master {4%+,4%-,toggle}
+
+# Audio Player
+XF86Audio{Play,Next,Prev}
+	playerctl {play-pause,next,previous}
+
+# Terminal
+super + Return
+	alacritty
+
+# Chrome
+super + {_, shift} + g
+	google-chrome-stable {--profile-directory='Default', --profile-directory='Profile 1'}
+
+# zzz
+super + shift + z
+	sleep 2 && sudo zzz
+
+# Quit/Restart
+super + alt + {q,r}
+	bspc {quit,wm --restart}
+
+# Close/Kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# Focus/Swap nodes
+super + {_,shift + }{h,j,k,l}
+	bspc node --{focus,swap} {west,south,north,east}
+
+#Next/Previous monitor
+super + {g,d}
+	bspc monitor --focus {west, east}
+
+# Next/Previous desktop in the current monitor
+super + {p,n}
+	bspc desktop --focus {prev,next}.local
+
+# Select desktop in the current monitor
+super + {1-9}
+	bspc desktop --focus {1-9}
+
+# Preselect the direction
+super + {_, shift +}{r,b}
+	bspc node --presel-ratio 0.{5,25} --presel-dir {east,south}
+
+# Cancel preselection
+super + Escape
+	bspc node --presel-dir cancel

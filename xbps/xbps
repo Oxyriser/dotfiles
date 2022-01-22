@@ -1,0 +1,86 @@
+#! /bin/env fish
+
+set -l params $argv[2..-1]
+
+switch $argv[1]
+    case q query
+        xbps-query $params
+
+    case info
+        xbps-query -R $params
+        and echo -s (set_color --bold) "files" (set_color normal) ":"
+        and xbps-query -R --file $params | xargs printf '\t%s\n'
+
+    case s search
+        xbps-query -Rs $params
+
+    case l ls
+        xbps-query -m
+
+    case la
+        xbps-query -l
+
+    case deps
+        xbps-query -x $params
+
+    case revdeps
+        xbps-query -X $params
+
+    case alt alternatives
+        xbps-alternatives $params
+
+    case i install
+        xbps-install -S $params
+
+    case up update
+        xbps-install -Su $params
+
+    case rm remove
+        xbps-remove $params
+
+    case rrm
+        xbps-remove -R $params
+
+    case clean
+        xbps-remove -Oo
+
+    case reconf reconfigure
+        xbps-reconfigure $params
+
+    case help --help
+        echo '
+        # QUERY
+        -R: look for <package> in repository
+        -f: show files of package
+        -x: show dependencies
+        -X: show reverse dependencies
+        -l: list installed packages
+        -m: list manualy installed packages
+        -s: search for <package>
+
+        # ALTERNATIVES
+        -l: list all current alternative groups
+        -s: set alternative groups
+        -g: specify a group
+
+        # INSTALL
+        -S: sync remote repository index
+        -u: update target package(s)
+
+        # REMOVE
+        -R: recursively remove dependencies
+        -O: remove obsolete packages in cachedir
+        -o: remove package orphans
+
+        # RECONFIGURE
+        -f: force reconfiguration
+        '
+
+    case '*'
+        if type -q "xbps-argv[1]"
+            "xbps-$argv[1]" $params
+        else
+            echo "xbps: xbps-$argv[1] n'est pas une commande valide"
+            exit 1
+        end
+end

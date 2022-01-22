@@ -1,0 +1,15 @@
+#!/bin/sh
+
+config_dir=$XDG_CONFIG_HOME/X11
+
+xrdb -load $config_dir/Xresources
+# xmodmap $config_dir/Xmodmap
+
+setxkbmap -layout fr -option caps:escape
+numlockx on
+
+xrandr --output HDMI-0 --primary --right-of DVI-0
+hsetroot -solid "#000000"
+picom &
+
+exec dbus-run-session -- bspwm
